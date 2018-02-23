@@ -13,7 +13,7 @@
 		B9D7D8E3203F2FA00028EF07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8E1203F2FA00028EF07 /* Main.storyboard */; };
 		B9D7D8E5203F2FA00028EF07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8E4203F2FA00028EF07 /* Assets.xcassets */; };
 		B9D7D8E8203F2FA00028EF07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8E6203F2FA00028EF07 /* LaunchScreen.storyboard */; };
-		B9D7D8F0203F2FE60028EF07 /* PuroductList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8EF203F2FE50028EF07 /* PuroductList.storyboard */; };
+		B9D7D8F0203F2FE60028EF07 /* A.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8EF203F2FE50028EF07 /* A.storyboard */; };
 		B9D7D8F2203F2FFD0028EF07 /* B.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8F1203F2FFD0028EF07 /* B.storyboard */; };
 		B9D7D8F4203F300E0028EF07 /* C.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8F3203F300E0028EF07 /* C.storyboard */; };
 		B9D7D8FC203F33970028EF07 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D8FB203F33970028EF07 /* PageViewController.swift */; };
@@ -39,7 +39,7 @@
 		B9D7D8E4203F2FA00028EF07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9D7D8E7203F2FA00028EF07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9D7D8E9203F2FA00028EF07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9D7D8EF203F2FE50028EF07 /* PuroductList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PuroductList.storyboard; sourceTree = "<group>"; };
+		B9D7D8EF203F2FE50028EF07 /* A.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = A.storyboard; sourceTree = "<group>"; };
 		B9D7D8F1203F2FFD0028EF07 /* B.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = B.storyboard; sourceTree = "<group>"; };
 		B9D7D8F3203F300E0028EF07 /* C.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = C.storyboard; sourceTree = "<group>"; };
 		B9D7D8FB203F33970028EF07 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		B9D7D90620401B650028EF07 /* PuroductList_storybord */ = {
 			isa = PBXGroup;
 			children = (
-				B9D7D8EF203F2FE50028EF07 /* PuroductList.storyboard */,
+				B9D7D8EF203F2FE50028EF07 /* A.storyboard */,
 				B9D7D8FB203F33970028EF07 /* PageViewController.swift */,
 				B9D7D8FD203F35740028EF07 /* FirstViewController.swift */,
 				B9D7D8FF203F35910028EF07 /* SecondViewController.swift */,
@@ -209,7 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D7D90820401C470028EF07 /* Login.storyboard in Resources */,
-				B9D7D8F0203F2FE60028EF07 /* PuroductList.storyboard in Resources */,
+				B9D7D8F0203F2FE60028EF07 /* A.storyboard in Resources */,
 				B9D7D8E8203F2FA00028EF07 /* LaunchScreen.storyboard in Resources */,
 				B9D7D90A204026590028EF07 /* Kanematsu_auditorium.jpg in Resources */,
 				B9D7D8F4203F300E0028EF07 /* C.storyboard in Resources */,

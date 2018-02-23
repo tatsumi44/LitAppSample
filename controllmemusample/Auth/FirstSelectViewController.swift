@@ -21,7 +21,8 @@ class FirstSelectViewController: UIViewController {
         super.viewWillAppear(animated)
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if Auth.auth().currentUser != nil{
-                self.segueToMain()
+                //色々済んだら実装
+//                self.segueToMain()
             }else{
                 print("ログインしてね")
             }

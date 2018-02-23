@@ -94,6 +94,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButton:" destination="KDo-X2-Yv2" eventType="touchUpInside" id="Dwc-RD-b4m"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -101,6 +104,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="ログイン" id="sXY-ah-gCQ"/>
                     <connections>
+                        <outlet property="emailTextField" destination="8w1-n5-Crh" id="zlP-cO-Mwd"/>
+                        <outlet property="passwordTextField" destination="kQz-gR-JGe" id="RFl-27-M2d"/>
                         <segue destination="Lqt-1G-BRI" kind="presentation" identifier="LoginMainStoprybord" id="dlu-iK-8un"/>
                     </connections>
                 </viewController>
@@ -189,7 +194,7 @@
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <action selector="RegisterTap:" destination="LSz-Po-Swt" eventType="touchUpInside" id="e3I-cE-Xxg"/>
+                                    <action selector="registerButton:" destination="LSz-Po-Swt" eventType="touchUpInside" id="6Sj-fD-q5u"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iU4-gc-T2Z">
@@ -240,6 +245,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="登録" id="3ww-ZO-y0u"/>
                     <connections>
+                        <outlet property="courseTextField" destination="fEc-QM-4WZ" id="b5q-2E-BTy"/>
+                        <outlet property="gradeTextField" destination="f5J-CY-G9c" id="Dto-HN-ZgS"/>
+                        <outlet property="nameTextField" destination="iU4-gc-T2Z" id="UL3-Zk-1ZA"/>
                         <segue destination="Lqt-1G-BRI" kind="presentation" identifier="RegisterMainStorybord" id="cdA-0I-OZ7"/>
                     </connections>
                 </viewController>
