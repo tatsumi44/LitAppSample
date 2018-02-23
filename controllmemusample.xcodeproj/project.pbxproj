@@ -21,6 +21,12 @@
 		B9D7D900203F35910028EF07 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D8FF203F35910028EF07 /* SecondViewController.swift */; };
 		B9D7D902203F35AF0028EF07 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D901203F35AF0028EF07 /* ThirdViewController.swift */; };
 		B9D7D904203FEB850028EF07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D903203FEB840028EF07 /* GoogleService-Info.plist */; };
+		B9D7D90820401C470028EF07 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D90720401C470028EF07 /* Login.storyboard */; };
+		B9D7D90A204026590028EF07 /* Kanematsu_auditorium.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D909204026590028EF07 /* Kanematsu_auditorium.jpg */; };
+		B9D7D90C2040274C0028EF07 /* FirstSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D90B2040274C0028EF07 /* FirstSelectViewController.swift */; };
+		B9D7D90E204027700028EF07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D90D204027700028EF07 /* LoginViewController.swift */; };
+		B9D7D910204027850028EF07 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D90F204027850028EF07 /* RegisterViewController.swift */; };
+		B9D7D91220402A480028EF07 /* EmailRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D91120402A480028EF07 /* EmailRegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +47,12 @@
 		B9D7D8FF203F35910028EF07 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B9D7D901203F35AF0028EF07 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		B9D7D903203FEB840028EF07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B9D7D90720401C470028EF07 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		B9D7D909204026590028EF07 /* Kanematsu_auditorium.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Kanematsu_auditorium.jpg; sourceTree = "<group>"; };
+		B9D7D90B2040274C0028EF07 /* FirstSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSelectViewController.swift; sourceTree = "<group>"; };
+		B9D7D90D204027700028EF07 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B9D7D90F204027850028EF07 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		B9D7D91120402A480028EF07 /* EmailRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegisterViewController.swift; sourceTree = "<group>"; };
 		E9FE34DCFA13CA0EF4AFE2DE /* Pods-controllmemusample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-controllmemusample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-controllmemusample/Pods-controllmemusample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,10 +100,14 @@
 			children = (
 				B9D7D903203FEB840028EF07 /* GoogleService-Info.plist */,
 				B9D7D8DD203F2FA00028EF07 /* AppDelegate.swift */,
+				B9D7D90B2040274C0028EF07 /* FirstSelectViewController.swift */,
+				B9D7D90D204027700028EF07 /* LoginViewController.swift */,
+				B9D7D91120402A480028EF07 /* EmailRegisterViewController.swift */,
+				B9D7D90F204027850028EF07 /* RegisterViewController.swift */,
+				B9D7D909204026590028EF07 /* Kanematsu_auditorium.jpg */,
+				B9D7D90720401C470028EF07 /* Login.storyboard */,
 				B9D7D8DF203F2FA00028EF07 /* ViewController.swift */,
-				B9D7D8FD203F35740028EF07 /* FirstViewController.swift */,
-				B9D7D8FF203F35910028EF07 /* SecondViewController.swift */,
-				B9D7D901203F35AF0028EF07 /* ThirdViewController.swift */,
+				B9D7D90620401B650028EF07 /* A_storybord */,
 				B9D7D8E1203F2FA00028EF07 /* Main.storyboard */,
 				B9D7D8EF203F2FE50028EF07 /* A.storyboard */,
 				B9D7D8F1203F2FFD0028EF07 /* B.storyboard */,
@@ -102,6 +118,16 @@
 				B9D7D8E9203F2FA00028EF07 /* Info.plist */,
 			);
 			path = controllmemusample;
+			sourceTree = "<group>";
+		};
+		B9D7D90620401B650028EF07 /* A_storybord */ = {
+			isa = PBXGroup;
+			children = (
+				B9D7D8FD203F35740028EF07 /* FirstViewController.swift */,
+				B9D7D8FF203F35910028EF07 /* SecondViewController.swift */,
+				B9D7D901203F35AF0028EF07 /* ThirdViewController.swift */,
+			);
+			path = A_storybord;
 			sourceTree = "<group>";
 		};
 		D7C5CA9684AE36FA53665ECF /* Frameworks */ = {
@@ -174,8 +200,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D7D90820401C470028EF07 /* Login.storyboard in Resources */,
 				B9D7D8F0203F2FE60028EF07 /* A.storyboard in Resources */,
 				B9D7D8E8203F2FA00028EF07 /* LaunchScreen.storyboard in Resources */,
+				B9D7D90A204026590028EF07 /* Kanematsu_auditorium.jpg in Resources */,
 				B9D7D8F4203F300E0028EF07 /* C.storyboard in Resources */,
 				B9D7D8F2203F2FFD0028EF07 /* B.storyboard in Resources */,
 				B9D7D904203FEB850028EF07 /* GoogleService-Info.plist in Resources */,
@@ -253,11 +281,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D7D910204027850028EF07 /* RegisterViewController.swift in Sources */,
 				B9D7D8FC203F33970028EF07 /* PageViewController.swift in Sources */,
 				B9D7D8E0203F2FA00028EF07 /* ViewController.swift in Sources */,
 				B9D7D8DE203F2FA00028EF07 /* AppDelegate.swift in Sources */,
 				B9D7D900203F35910028EF07 /* SecondViewController.swift in Sources */,
+				B9D7D90E204027700028EF07 /* LoginViewController.swift in Sources */,
 				B9D7D902203F35AF0028EF07 /* ThirdViewController.swift in Sources */,
+				B9D7D90C2040274C0028EF07 /* FirstSelectViewController.swift in Sources */,
+				B9D7D91220402A480028EF07 /* EmailRegisterViewController.swift in Sources */,
 				B9D7D8FE203F35740028EF07 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
