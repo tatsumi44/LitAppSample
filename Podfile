@@ -9,6 +9,7 @@ target 'controllmemusample' do
   pod 'FirebaseUI/Storage'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
   # Pods for controllmemusample
 

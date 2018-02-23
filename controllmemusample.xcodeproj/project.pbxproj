@@ -13,7 +13,7 @@
 		B9D7D8E3203F2FA00028EF07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8E1203F2FA00028EF07 /* Main.storyboard */; };
 		B9D7D8E5203F2FA00028EF07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8E4203F2FA00028EF07 /* Assets.xcassets */; };
 		B9D7D8E8203F2FA00028EF07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8E6203F2FA00028EF07 /* LaunchScreen.storyboard */; };
-		B9D7D8F0203F2FE60028EF07 /* A.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8EF203F2FE50028EF07 /* A.storyboard */; };
+		B9D7D8F0203F2FE60028EF07 /* PuroductList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8EF203F2FE50028EF07 /* PuroductList.storyboard */; };
 		B9D7D8F2203F2FFD0028EF07 /* B.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8F1203F2FFD0028EF07 /* B.storyboard */; };
 		B9D7D8F4203F300E0028EF07 /* C.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8F3203F300E0028EF07 /* C.storyboard */; };
 		B9D7D8FC203F33970028EF07 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D8FB203F33970028EF07 /* PageViewController.swift */; };
@@ -39,7 +39,7 @@
 		B9D7D8E4203F2FA00028EF07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9D7D8E7203F2FA00028EF07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9D7D8E9203F2FA00028EF07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9D7D8EF203F2FE50028EF07 /* A.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = A.storyboard; sourceTree = "<group>"; };
+		B9D7D8EF203F2FE50028EF07 /* PuroductList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PuroductList.storyboard; sourceTree = "<group>"; };
 		B9D7D8F1203F2FFD0028EF07 /* B.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = B.storyboard; sourceTree = "<group>"; };
 		B9D7D8F3203F300E0028EF07 /* C.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = C.storyboard; sourceTree = "<group>"; };
 		B9D7D8FB203F33970028EF07 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +77,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B935015620403554000F554B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B9D7D90720401C470028EF07 /* Login.storyboard */,
+				B9D7D90B2040274C0028EF07 /* FirstSelectViewController.swift */,
+				B9D7D90F204027850028EF07 /* RegisterViewController.swift */,
+				B9D7D90D204027700028EF07 /* LoginViewController.swift */,
+				B9D7D91120402A480028EF07 /* EmailRegisterViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		B9D7D8D1203F2FA00028EF07 = {
 			isa = PBXGroup;
 			children = (
@@ -99,20 +111,14 @@
 			isa = PBXGroup;
 			children = (
 				B9D7D903203FEB840028EF07 /* GoogleService-Info.plist */,
-				B9D7D8DD203F2FA00028EF07 /* AppDelegate.swift */,
-				B9D7D90B2040274C0028EF07 /* FirstSelectViewController.swift */,
-				B9D7D90D204027700028EF07 /* LoginViewController.swift */,
-				B9D7D91120402A480028EF07 /* EmailRegisterViewController.swift */,
-				B9D7D90F204027850028EF07 /* RegisterViewController.swift */,
 				B9D7D909204026590028EF07 /* Kanematsu_auditorium.jpg */,
-				B9D7D90720401C470028EF07 /* Login.storyboard */,
+				B9D7D8DD203F2FA00028EF07 /* AppDelegate.swift */,
 				B9D7D8DF203F2FA00028EF07 /* ViewController.swift */,
-				B9D7D90620401B650028EF07 /* A_storybord */,
 				B9D7D8E1203F2FA00028EF07 /* Main.storyboard */,
-				B9D7D8EF203F2FE50028EF07 /* A.storyboard */,
+				B935015620403554000F554B /* Auth */,
+				B9D7D90620401B650028EF07 /* PuroductList_storybord */,
 				B9D7D8F1203F2FFD0028EF07 /* B.storyboard */,
 				B9D7D8F3203F300E0028EF07 /* C.storyboard */,
-				B9D7D8FB203F33970028EF07 /* PageViewController.swift */,
 				B9D7D8E4203F2FA00028EF07 /* Assets.xcassets */,
 				B9D7D8E6203F2FA00028EF07 /* LaunchScreen.storyboard */,
 				B9D7D8E9203F2FA00028EF07 /* Info.plist */,
@@ -120,14 +126,16 @@
 			path = controllmemusample;
 			sourceTree = "<group>";
 		};
-		B9D7D90620401B650028EF07 /* A_storybord */ = {
+		B9D7D90620401B650028EF07 /* PuroductList_storybord */ = {
 			isa = PBXGroup;
 			children = (
+				B9D7D8EF203F2FE50028EF07 /* PuroductList.storyboard */,
+				B9D7D8FB203F33970028EF07 /* PageViewController.swift */,
 				B9D7D8FD203F35740028EF07 /* FirstViewController.swift */,
 				B9D7D8FF203F35910028EF07 /* SecondViewController.swift */,
 				B9D7D901203F35AF0028EF07 /* ThirdViewController.swift */,
 			);
-			path = A_storybord;
+			path = PuroductList_storybord;
 			sourceTree = "<group>";
 		};
 		D7C5CA9684AE36FA53665ECF /* Frameworks */ = {
@@ -201,7 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D7D90820401C470028EF07 /* Login.storyboard in Resources */,
-				B9D7D8F0203F2FE60028EF07 /* A.storyboard in Resources */,
+				B9D7D8F0203F2FE60028EF07 /* PuroductList.storyboard in Resources */,
 				B9D7D8E8203F2FA00028EF07 /* LaunchScreen.storyboard in Resources */,
 				B9D7D90A204026590028EF07 /* Kanematsu_auditorium.jpg in Resources */,
 				B9D7D8F4203F300E0028EF07 /* C.storyboard in Resources */,
@@ -255,17 +263,29 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-controllmemusample/Pods-controllmemusample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
