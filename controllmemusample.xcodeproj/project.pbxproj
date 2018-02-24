@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A4C54ABC4DA7492FA0C44A1B /* Pods_controllmemusample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4933FA21958E3CFA92A1C683 /* Pods_controllmemusample.framework */; };
 		B935015A20404D08000F554B /* OtherMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935015920404D08000F554B /* OtherMenuViewController.swift */; };
+		B935015D20412609000F554B /* ProductContribution.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B935015C20412609000F554B /* ProductContribution.storyboard */; };
+		B935015F20413ACF000F554B /* CategorySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935015E20413ACE000F554B /* CategorySelectViewController.swift */; };
+		B935016120413CB2000F554B /* ProductContoributionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935016020413CB2000F554B /* ProductContoributionViewController.swift */; };
 		B9D7D8DE203F2FA00028EF07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D8DD203F2FA00028EF07 /* AppDelegate.swift */; };
 		B9D7D8E0203F2FA00028EF07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D8DF203F2FA00028EF07 /* ViewController.swift */; };
 		B9D7D8E3203F2FA00028EF07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8E1203F2FA00028EF07 /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 		14876070071AE01B4FF58E63 /* Pods-controllmemusample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-controllmemusample.release.xcconfig"; path = "Pods/Target Support Files/Pods-controllmemusample/Pods-controllmemusample.release.xcconfig"; sourceTree = "<group>"; };
 		4933FA21958E3CFA92A1C683 /* Pods_controllmemusample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_controllmemusample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B935015920404D08000F554B /* OtherMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherMenuViewController.swift; sourceTree = "<group>"; };
+		B935015C20412609000F554B /* ProductContribution.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductContribution.storyboard; sourceTree = "<group>"; };
+		B935015E20413ACE000F554B /* CategorySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectViewController.swift; sourceTree = "<group>"; };
+		B935016020413CB2000F554B /* ProductContoributionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductContoributionViewController.swift; sourceTree = "<group>"; };
 		B9D7D8DA203F2FA00028EF07 /* controllmemusample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = controllmemusample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D7D8DD203F2FA00028EF07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9D7D8DF203F2FA00028EF07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +97,15 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		B935015B2041255D000F554B /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				B9D7D8F1203F2FFD0028EF07 /* B.storyboard */,
+				B935015920404D08000F554B /* OtherMenuViewController.swift */,
+			);
+			path = menu;
+			sourceTree = "<group>";
+		};
 		B9D7D8D1203F2FA00028EF07 = {
 			isa = PBXGroup;
 			children = (
@@ -119,8 +134,10 @@
 				B9D7D8E1203F2FA00028EF07 /* Main.storyboard */,
 				B935015620403554000F554B /* Auth */,
 				B9D7D90620401B650028EF07 /* PuroductList_storybord */,
-				B9D7D8F1203F2FFD0028EF07 /* B.storyboard */,
-				B935015920404D08000F554B /* OtherMenuViewController.swift */,
+				B935015C20412609000F554B /* ProductContribution.storyboard */,
+				B935015E20413ACE000F554B /* CategorySelectViewController.swift */,
+				B935016020413CB2000F554B /* ProductContoributionViewController.swift */,
+				B935015B2041255D000F554B /* menu */,
 				B9D7D8F3203F300E0028EF07 /* C.storyboard */,
 				B9D7D8E4203F2FA00028EF07 /* Assets.xcassets */,
 				B9D7D8E6203F2FA00028EF07 /* LaunchScreen.storyboard */,
@@ -213,6 +230,7 @@
 			files = (
 				B9D7D90820401C470028EF07 /* Login.storyboard in Resources */,
 				B9D7D8F0203F2FE60028EF07 /* A.storyboard in Resources */,
+				B935015D20412609000F554B /* ProductContribution.storyboard in Resources */,
 				B9D7D8E8203F2FA00028EF07 /* LaunchScreen.storyboard in Resources */,
 				B9D7D90A204026590028EF07 /* Kanematsu_auditorium.jpg in Resources */,
 				B9D7D8F4203F300E0028EF07 /* C.storyboard in Resources */,
@@ -311,9 +329,11 @@
 				B9D7D8DE203F2FA00028EF07 /* AppDelegate.swift in Sources */,
 				B9D7D900203F35910028EF07 /* SecondViewController.swift in Sources */,
 				B9D7D90E204027700028EF07 /* LoginViewController.swift in Sources */,
+				B935016120413CB2000F554B /* ProductContoributionViewController.swift in Sources */,
 				B9D7D902203F35AF0028EF07 /* ThirdViewController.swift in Sources */,
 				B9D7D90C2040274C0028EF07 /* FirstSelectViewController.swift in Sources */,
 				B9D7D91220402A480028EF07 /* EmailRegisterViewController.swift in Sources */,
+				B935015F20413ACF000F554B /* CategorySelectViewController.swift in Sources */,
 				B9D7D8FE203F35740028EF07 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

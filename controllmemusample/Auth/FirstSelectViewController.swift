@@ -22,7 +22,7 @@ class FirstSelectViewController: UIViewController {
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if Auth.auth().currentUser != nil{
                 //色々済んだら実装
-//                self.segueToMain()
+                self.segueToMain()
             }else{
                 print("ログインしてね")
             }

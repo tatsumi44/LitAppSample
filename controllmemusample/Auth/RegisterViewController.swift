@@ -34,7 +34,7 @@ class RegisterViewController: UIViewController {
         uid = user?.uid
         email = user?.email
         db = Firestore.firestore()
-        
+       
     }
 
     override func didReceiveMemoryWarning() {

@@ -11,12 +11,24 @@ import Firebase
 class OtherMenuViewController: UIViewController {
     //異なるStorybordに画面遷移するのでこれを用いる、nameでStorybordの名前を指定
     let storybord: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+    var uid: String!
+    var db: Firestore!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let user = Auth.auth().currentUser
+        uid = user?.uid
+        db = Firestore.firestore()
+        db.collection("users").document(uid).getDocument { (snap, error) in
+            let data = snap?.data()
+            let name = data!["name"] as? String
+            print(name!)
+        }
 
         // Do any additional setup after loading the view.
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
