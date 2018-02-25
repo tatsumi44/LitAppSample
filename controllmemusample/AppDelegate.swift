@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import DKImagePickerController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

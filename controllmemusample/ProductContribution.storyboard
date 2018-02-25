@@ -65,9 +65,116 @@
                     <view key="view" contentMode="scaleToFill" id="QL2-FJ-Jxg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bQ0-Wm-dfu">
+                                <rect key="frame" x="0.0" y="64" width="114" height="106"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="MQT-Gy-BRP"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HTo-pu-VB9">
+                                    <size key="itemSize" width="108" height="98"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Kgm-kb-Wvy">
+                                        <rect key="frame" x="3" y="0.0" width="108" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="108" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YQW-jc-BwH">
+                                                    <rect key="frame" x="-1" y="3" width="105" height="92"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVM-UW-VNe">
+                                <rect key="frame" x="30" y="200" width="315" height="30"/>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="画像をアルバムから選択"/>
+                                <connections>
+                                    <action selector="selectImageButton:" destination="3Yx-7B-R1Z" eventType="touchUpInside" id="Lx3-Rc-iWv"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="商品名を選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ik-vA-fz7">
+                                <rect key="frame" x="30" y="261" width="315" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="価格を決定してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3lM-53-cfw">
+                                <rect key="frame" x="30" y="322" width="315" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="希望の受け取り場所を入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QZS-SW-QAm">
+                                <rect key="frame" x="30" y="383" width="315" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BtO-Lx-Ta2">
+                                <rect key="frame" x="30" y="443" width="315" height="139"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTn-mQ-FIs">
+                                <rect key="frame" x="60" y="596" width="255" height="30"/>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="決定"/>
+                                <connections>
+                                    <action selector="decideButton:" destination="3Yx-7B-R1Z" eventType="touchUpInside" id="CS2-tA-4c4"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eTn-mQ-FIs" firstAttribute="centerX" secondItem="QL2-FJ-Jxg" secondAttribute="centerX" id="2xz-VC-HE1"/>
+                            <constraint firstItem="soR-0c-kkj" firstAttribute="trailing" secondItem="eTn-mQ-FIs" secondAttribute="trailing" constant="60" id="3Oi-vU-XNU"/>
+                            <constraint firstItem="uVM-UW-VNe" firstAttribute="centerX" secondItem="QL2-FJ-Jxg" secondAttribute="centerX" id="Ce8-xF-RKY"/>
+                            <constraint firstItem="QZS-SW-QAm" firstAttribute="leading" secondItem="soR-0c-kkj" secondAttribute="leading" constant="30" id="DQ5-s1-n1h"/>
+                            <constraint firstItem="9Ik-vA-fz7" firstAttribute="leading" secondItem="soR-0c-kkj" secondAttribute="leading" constant="30" id="EPt-qz-vCT"/>
+                            <constraint firstItem="uVM-UW-VNe" firstAttribute="top" secondItem="bQ0-Wm-dfu" secondAttribute="bottom" constant="8" id="FL9-iP-Ti8"/>
+                            <constraint firstItem="bQ0-Wm-dfu" firstAttribute="top" secondItem="soR-0c-kkj" secondAttribute="top" id="J6C-bD-ijB"/>
+                            <constraint firstItem="BtO-Lx-Ta2" firstAttribute="top" secondItem="QZS-SW-QAm" secondAttribute="bottom" constant="30" id="MoM-OB-5gH"/>
+                            <constraint firstItem="soR-0c-kkj" firstAttribute="bottom" secondItem="BtO-Lx-Ta2" secondAttribute="bottom" constant="85" id="PCv-cB-KTz"/>
+                            <constraint firstItem="bQ0-Wm-dfu" firstAttribute="centerX" secondItem="uVM-UW-VNe" secondAttribute="centerX" id="Rfd-8c-Tzd"/>
+                            <constraint firstItem="3lM-53-cfw" firstAttribute="leading" secondItem="soR-0c-kkj" secondAttribute="leading" constant="30" id="UeA-zj-y5G"/>
+                            <constraint firstItem="9Ik-vA-fz7" firstAttribute="top" secondItem="uVM-UW-VNe" secondAttribute="bottom" constant="31" id="VBt-bc-KT4"/>
+                            <constraint firstItem="uVM-UW-VNe" firstAttribute="leading" secondItem="soR-0c-kkj" secondAttribute="leading" constant="30" id="X86-9P-5cR"/>
+                            <constraint firstItem="soR-0c-kkj" firstAttribute="trailing" secondItem="3lM-53-cfw" secondAttribute="trailing" constant="30" id="Y97-03-3Ec"/>
+                            <constraint firstItem="soR-0c-kkj" firstAttribute="trailing" secondItem="9Ik-vA-fz7" secondAttribute="trailing" constant="30" id="ZRE-gO-l3Y"/>
+                            <constraint firstItem="3lM-53-cfw" firstAttribute="top" secondItem="9Ik-vA-fz7" secondAttribute="bottom" constant="31" id="b4a-3t-WpI"/>
+                            <constraint firstItem="9Ik-vA-fz7" firstAttribute="centerX" secondItem="QL2-FJ-Jxg" secondAttribute="centerX" id="gmk-yv-5eW"/>
+                            <constraint firstItem="QZS-SW-QAm" firstAttribute="top" secondItem="3lM-53-cfw" secondAttribute="bottom" constant="31" id="jjh-Ju-tiy"/>
+                            <constraint firstItem="QZS-SW-QAm" firstAttribute="centerX" secondItem="QL2-FJ-Jxg" secondAttribute="centerX" id="js4-bd-uDj"/>
+                            <constraint firstItem="soR-0c-kkj" firstAttribute="trailing" secondItem="QZS-SW-QAm" secondAttribute="trailing" constant="30" id="m6J-Lg-5Uw"/>
+                            <constraint firstItem="soR-0c-kkj" firstAttribute="trailing" secondItem="uVM-UW-VNe" secondAttribute="trailing" constant="30" id="nDK-zZ-LCv"/>
+                            <constraint firstItem="3lM-53-cfw" firstAttribute="centerX" secondItem="QL2-FJ-Jxg" secondAttribute="centerX" id="oa4-2a-WfW"/>
+                            <constraint firstItem="eTn-mQ-FIs" firstAttribute="leading" secondItem="soR-0c-kkj" secondAttribute="leading" constant="60" id="qWH-hQ-O7H"/>
+                            <constraint firstItem="BtO-Lx-Ta2" firstAttribute="leading" secondItem="soR-0c-kkj" secondAttribute="leading" constant="30" id="qei-yJ-ydc"/>
+                            <constraint firstItem="eTn-mQ-FIs" firstAttribute="top" secondItem="BtO-Lx-Ta2" secondAttribute="bottom" constant="14" id="t6Y-Yf-6UT"/>
+                            <constraint firstItem="bQ0-Wm-dfu" firstAttribute="leading" secondItem="QL2-FJ-Jxg" secondAttribute="leading" id="yJ6-n5-wvG"/>
+                            <constraint firstItem="soR-0c-kkj" firstAttribute="trailing" secondItem="BtO-Lx-Ta2" secondAttribute="trailing" constant="30" id="zSr-wN-2aX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="soR-0c-kkj"/>
                     </view>
+                    <connections>
+                        <outlet property="getProductDecideTextField" destination="QZS-SW-QAm" id="7Aw-n1-pW2"/>
+                        <outlet property="imageCollectionView" destination="bQ0-Wm-dfu" id="dMo-It-RZ0"/>
+                        <outlet property="priceTextField" destination="3lM-53-cfw" id="7GY-qN-cw8"/>
+                        <outlet property="productDetailTextField" destination="BtO-Lx-Ta2" id="TOL-Cq-dkD"/>
+                        <outlet property="productNameTextField" destination="9Ik-vA-fz7" id="1bQ-6s-onV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNK-Km-LsC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -5,6 +5,11 @@ PODS:
   - BoringSSL/Implementation (9.2):
     - BoringSSL/Interface (= 9.2)
   - BoringSSL/Interface (9.2)
+  - DKImagePickerController (3.8.1):
+    - DKImagePickerController/Camera (= 3.8.1)
+    - DKImagePickerController/ImageManager (= 3.8.1)
+  - DKImagePickerController/Camera (3.8.1)
+  - DKImagePickerController/ImageManager (3.8.1)
   - Firebase/Auth (4.9.0):
     - Firebase/Core
     - FirebaseAuth (= 4.4.3)
@@ -92,6 +97,7 @@ PODS:
   - SDWebImage/Core (4.3.0)
 
 DEPENDENCIES:
+  - DKImagePickerController
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -101,6 +107,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   BoringSSL: f3d6b8ce199b9c450a8cfc14895d07a2627fc232
+  DKImagePickerController: 51ad6ee2ba05414bb741db54a72cd7f4fb178e34
   Firebase: 632216af3ed7f31e3be34776947fdc7546cfb572
   FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
   FirebaseAuth: aaaf68d5064a6c8fec435758f83a43b8db26ccaa
@@ -121,6 +128,6 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
 
-PODFILE CHECKSUM: 85b30f2c3d849ee6e82915fca43572576b27fa15
+PODFILE CHECKSUM: 7ff30e439cb4f41d19389d265758d0d9de9ebf07
 
 COCOAPODS: 1.4.0
