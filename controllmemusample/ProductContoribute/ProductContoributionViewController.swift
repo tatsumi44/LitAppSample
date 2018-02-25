@@ -20,6 +20,7 @@ class ProductContoributionViewController: UIViewController,UICollectionViewDataS
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var getProductDecideTextField: UITextField!
     @IBOutlet weak var productDetailTextField: UITextView!
+    
     var imageArray = [UIImage]()
     var imagePathArray = [String]()
     var imageview:UIImageView!
@@ -42,6 +43,8 @@ class ProductContoributionViewController: UIViewController,UICollectionViewDataS
         priceTextField.delegate = self
         getProductDecideTextField.delegate = self
         productDetailTextField.delegate = self
+        productDetailTextField.layer.borderColor = UIColor.black.cgColor
+        productDetailTextField.layer.borderWidth = 1.0
         
         
     }
@@ -116,6 +119,7 @@ class ProductContoributionViewController: UIViewController,UICollectionViewDataS
                 let downloadURL = metadata.downloadURL
                 print(downloadURL)
             }
+            
         }
         db.collection("\(categorynum!)").addDocument(data: [
             "uid": "\(uid!)",
