@@ -22,7 +22,9 @@ class ProductDetailViewController: UIViewController {
     var cellOfNum: Int!
     var db: Firestore!
     var exhibitationName: String!
-    var uid: String!
+    var myuid: String!
+    var opposerid: String!
+    var productid: String!
     var imagePathArray = [String]()
     var getmainArray = [StorageReference]()
     var imageNum = 0
@@ -35,10 +37,10 @@ class ProductDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        uid = Auth.auth().currentUser?.uid
+        myuid = Auth.auth().currentUser?.uid
         db = Firestore.firestore()
         let storage = Storage.storage().reference()
-        db.collection("users").document(uid).getDocument { (snap, error) in
+        db.collection("users").document(myuid).getDocument { (snap, error) in
             if let error = error{
                 print("error")
             }else{
@@ -84,6 +86,28 @@ class ProductDetailViewController: UIViewController {
     }
     
     @IBAction func decideButton(_ sender: Any) {
+        let alertController = UIAlertController(title: "購入確認", message: "本当にこの商品を購入してよろしいですか？", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+            print("ok")
+            self.opposerid = self.productArray[self.cellOfNum].uid
+            self.productid = self.productArray[self.cellOfNum].productID
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            appDelegate.myuid = self.myuid
+            appDelegate.opposerid = self.opposerid
+            appDelegate.productid = self.productid
+            self.db.collection("matchProduct").addDocument(data: [
+                "exhibitorID": self.opposerid,
+                "buyerID": self.myuid,
+                "productID": self.productid
+                ])
+            let storyboard: UIStoryboard = UIStoryboard(name: "Chat", bundle: nil)
+            let nextView = storyboard.instantiateInitialViewController()
+            self.present(nextView!, animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     func imagePrint() {
@@ -95,4 +119,12 @@ class ProductDetailViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func backViewContorollerButton(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "A", bundle: nil)
+        let nextView = storyboard.instantiateInitialViewController()
+        present(nextView!, animated: true, completion: nil)
+    }
+    
+    
 }

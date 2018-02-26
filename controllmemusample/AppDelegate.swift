@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var productArray = [Product]()
     var cellOfNum:Int!
+    var opposerid: String!
+    var productid: String!
     
     
 

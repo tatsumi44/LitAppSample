@@ -149,7 +149,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FgB-Vc-yh8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WO2-Yl-m7S"/>
+                    <navigationItem key="navigationItem" id="WO2-Yl-m7S">
+                        <barButtonItem key="leftBarButtonItem" title="I" image="back22.png" id="Gzw-UD-WS0">
+                            <connections>
+                                <action selector="backViewContorollerButton:" destination="nME-5n-Iuq" id="3cX-Q4-Lbb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="ExhibitorName" destination="NXk-LV-Svt" id="CaF-B5-d7P"/>
