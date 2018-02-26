@@ -48,6 +48,7 @@ class ProductContoributionViewController: UIViewController,UICollectionViewDataS
         
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
@@ -60,9 +61,7 @@ class ProductContoributionViewController: UIViewController,UICollectionViewDataS
         }else{
             print("まだ何もないよ")
         }
-        
         return cell
-        
     }
 
     override func didReceiveMemoryWarning() {

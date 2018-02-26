@@ -11,7 +11,7 @@ import Firebase
 import FirebaseStorage
 import SDWebImage
 
-class FirstViewController: UIViewController,UICollectionViewDataSource {
+class FirstViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
@@ -21,10 +21,12 @@ class FirstViewController: UIViewController,UICollectionViewDataSource {
     var getcontents: String!
     var productArray = [Product]()
     var imagePathArray = [String]()
+    var cellOfNum: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mainCollectionView.dataSource = self
+        mainCollectionView.delegate = self
         
         
         // Do any additional setup after loading the view.
@@ -50,12 +52,16 @@ class FirstViewController: UIViewController,UICollectionViewDataSource {
                     let ref = storage.child("image/goods/\(path)")
                     self.getmainArray.append(ref)
                 }
+               let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.productArray = self.productArray
                 print("いいね")
                 print(self.getmainArray)
                 self.mainCollectionView.reloadData()
             }
         }
     }
+   
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -84,6 +90,13 @@ class FirstViewController: UIViewController,UICollectionViewDataSource {
             }
         }
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        cellOfNum = indexPath.row
+        appDelegate.cellOfNum = self.cellOfNum
+        
     }
    
     

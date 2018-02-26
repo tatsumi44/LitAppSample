@@ -64,6 +64,9 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <connections>
+                                            <segue destination="VDQ-dp-CCS" kind="presentation" id="BWp-2r-yap"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -273,6 +276,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QiY-ML-SYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1808.8" y="348.57571214392806"/>
+        </scene>
+        <!--productDetail-->
+        <scene sceneID="zUa-lG-o2X">
+            <objects>
+                <viewControllerPlaceholder storyboardName="productDetail" id="VDQ-dp-CCS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bbr-1J-qBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1969" y="861"/>
         </scene>
         <!--ProductContribution-->
         <scene sceneID="vbW-5n-JgN">
