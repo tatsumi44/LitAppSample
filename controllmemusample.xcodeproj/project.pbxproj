@@ -22,6 +22,8 @@
 		B935019E2045316D000F554B /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935019D2045316D000F554B /* ChatListViewController.swift */; };
 		B93501A0204536A8000F554B /* SelectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935019F204536A8000F554B /* SelectListViewController.swift */; };
 		B93501A42045482D000F554B /* ChatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93501A32045482D000F554B /* ChatDetailViewController.swift */; };
+		B99025C3204560E000EC7108 /* PurchasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99025C2204560E000EC7108 /* PurchasedViewController.swift */; };
+		B99025C520456A4700EC7108 /* PurchasedDetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99025C420456A4700EC7108 /* PurchasedDetailChatViewController.swift */; };
 		B9D7D8DE203F2FA00028EF07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D8DD203F2FA00028EF07 /* AppDelegate.swift */; };
 		B9D7D8E0203F2FA00028EF07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D8DF203F2FA00028EF07 /* ViewController.swift */; };
 		B9D7D8E3203F2FA00028EF07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8E1203F2FA00028EF07 /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		B935019D2045316D000F554B /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		B935019F204536A8000F554B /* SelectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectListViewController.swift; sourceTree = "<group>"; };
 		B93501A32045482D000F554B /* ChatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailViewController.swift; sourceTree = "<group>"; };
+		B99025C2204560E000EC7108 /* PurchasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedViewController.swift; sourceTree = "<group>"; };
+		B99025C420456A4700EC7108 /* PurchasedDetailChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedDetailChatViewController.swift; sourceTree = "<group>"; };
 		B9D7D8DA203F2FA00028EF07 /* controllmemusample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = controllmemusample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D7D8DD203F2FA00028EF07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9D7D8DF203F2FA00028EF07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				B935019D2045316D000F554B /* ChatListViewController.swift */,
 				B935019F204536A8000F554B /* SelectListViewController.swift */,
 				B93501A32045482D000F554B /* ChatDetailViewController.swift */,
+				B99025C2204560E000EC7108 /* PurchasedViewController.swift */,
+				B99025C420456A4700EC7108 /* PurchasedDetailChatViewController.swift */,
 			);
 			path = chatOverview;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 			files = (
 				B935015A20404D08000F554B /* OtherMenuViewController.swift in Sources */,
 				B9D7D910204027850028EF07 /* RegisterViewController.swift in Sources */,
+				B99025C3204560E000EC7108 /* PurchasedViewController.swift in Sources */,
 				B935019B20440CB0000F554B /* ChatViewController.swift in Sources */,
 				B93501922043D7BA000F554B /* ProductDetailViewController.swift in Sources */,
 				B9D7D8FC203F33970028EF07 /* PageViewController.swift in Sources */,
@@ -407,6 +414,7 @@
 				B9D7D91220402A480028EF07 /* EmailRegisterViewController.swift in Sources */,
 				B935015F20413ACF000F554B /* CategorySelectViewController.swift in Sources */,
 				B9D7D8FE203F35740028EF07 /* FirstViewController.swift in Sources */,
+				B99025C520456A4700EC7108 /* PurchasedDetailChatViewController.swift in Sources */,
 				B93501A0204536A8000F554B /* SelectListViewController.swift in Sources */,
 				B935018C20433680000F554B /* Product.swift in Sources */,
 			);

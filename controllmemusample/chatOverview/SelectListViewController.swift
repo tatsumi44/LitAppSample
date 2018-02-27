@@ -26,7 +26,7 @@ class SelectListViewController: UIViewController {
     }
     
     @IBAction func mySellButton(_ sender: Any) {
-        
+        performSegue(withIdentifier: "PurchasedList", sender: nil)
     }
     
 
