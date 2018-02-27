@@ -33,6 +33,7 @@ class ChatListViewController: UIViewController,UITableViewDataSource,UITableView
         let uid: String = (Auth.auth().currentUser?.uid)!
         db = Firestore.firestore()
         db.collection("matchProduct").whereField("buyerID", isEqualTo: uid).getDocuments { (snap, error) in
+            self.sellerProductDetailArrays = [[String:String]]()
             if let error = error{
                 print("error")
             }else{
