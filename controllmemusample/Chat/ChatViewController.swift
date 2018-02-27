@@ -61,7 +61,8 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITextFieldDele
                     print("これは\(document.documentID)")
                     self.roomID = document.documentID
                 }
-                self.realTimeDB = Database.database().reference()
+                //chat用のdbに接続
+                    self.realTimeDB = Database.database().reference()
                 self.realTimeDB.ref.child("realtimechat").child("message").child(self.roomID).observe(.value) { (snap) in
                     print("呼ばれてます")
                     self.getMainArray = [[String]]()
@@ -78,10 +79,6 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITextFieldDele
                 }
             }
         }
-      
-        
-      
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -104,13 +101,14 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITextFieldDele
         commnetArray = ["name": myName,"comment": commentTextField.text!]
         realTimeDB.ref.child("realtimechat").child("message").child(roomID).childByAutoId().setValue(commnetArray)
         commentTextField.text = ""
-
-     
+        
+        
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
     
     
     
