@@ -32,6 +32,7 @@ class ProductContoributionViewController: UIViewController,UICollectionViewDataS
     var name: String!
     var course: String!
     var grade: String!
+    var photoCount: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,7 @@ class ProductContoributionViewController: UIViewController,UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return imageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -120,6 +121,8 @@ class ProductContoributionViewController: UIViewController,UICollectionViewDataS
             }
             
         }
+        photoCount = imageArray.count
+    
         db.collection("\(categorynum!)").addDocument(data: [
             "uid": "\(uid!)",
             "category": "\(categorynum!)",
@@ -127,10 +130,12 @@ class ProductContoributionViewController: UIViewController,UICollectionViewDataS
             "price": "\(priceTextField.text!)",
             "place": "\(getProductDecideTextField.text!)",
             "detail": "\(productDetailTextField.text!)",
-            "image1": "\(imagePathArray[0])",
-            "image2": "\(imagePathArray[1])",
-            "image3": "\(imagePathArray[2])",
+            "imagePath": imagePathArray,
             ])
+        
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.photoCount = self.photoCount
+        
         let storyboard: UIStoryboard = UIStoryboard(name: "A", bundle: nil)
         let nextView = storyboard.instantiateInitialViewController()
         present(nextView!, animated: true, completion: nil)

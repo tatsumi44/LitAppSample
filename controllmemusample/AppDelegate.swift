@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var cellOfNum:Int!
     var opposerid: String!
     var productid: String!
+    var photoCount: Int!
     
     
 

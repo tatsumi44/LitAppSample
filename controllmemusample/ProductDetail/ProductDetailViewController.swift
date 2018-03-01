@@ -12,6 +12,7 @@ import SDWebImage
 class ProductDetailViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageCountLabel: UILabel!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
@@ -28,6 +29,7 @@ class ProductDetailViewController: UIViewController {
     var imagePathArray = [String]()
     var getmainArray = [StorageReference]()
     var imageNum = 0
+    var imageCount: Int!
     
     
     override func viewDidLoad() {
@@ -56,9 +58,25 @@ class ProductDetailViewController: UIViewController {
         productName.text = self.productArray[self.cellOfNum].productName
         priceLabel.text = self.productArray[self.cellOfNum].price
         detailLabel.text = self.productArray[self.cellOfNum].detail
-        imagePathArray = [self.productArray[self.cellOfNum].image1,self.productArray[self.cellOfNum].image2,self.productArray[self.cellOfNum].image3]
+        print(self.productArray[self.cellOfNum].imageArray)
+        print(self.productArray[self.cellOfNum].imageArray.count)
+        imageCount = self.productArray[self.cellOfNum].imageArray.count
+        imageCountLabel.text = "\(imageNum+1)/\(imageCount!)"
+        
+        switch imageCount {
+        case 3:
+            imagePathArray = [self.productArray[self.cellOfNum].imageArray[0],self.productArray[self.cellOfNum].imageArray[1],self.productArray[self.cellOfNum].imageArray[2]]
+        case 2:
+            imagePathArray = [self.productArray[self.cellOfNum].imageArray[0],self.productArray[self.cellOfNum].imageArray[1]]
+        case 1:
+            imagePathArray = [self.productArray[self.cellOfNum].imageArray[0]]
+        default:
+            return
+        }
+        
         for path in imagePathArray{
             let ref = storage.child("image/goods/\(path)")
+            print(ref)
             self.getmainArray.append(ref)
         }
         imagePrint()
@@ -70,8 +88,9 @@ class ProductDetailViewController: UIViewController {
     }
     
     @IBAction func nextButton(_ sender: Any) {
-        if imageNum < 2{
+        if imageNum < imageCount-1{
             self.imageNum += 1
+            imageCountLabel.text = "\(imageNum+1)/\(imageCount!)"
             self.imagePrint()
         }
         
@@ -80,6 +99,7 @@ class ProductDetailViewController: UIViewController {
     @IBAction func backButton(_ sender: Any) {
         if imageNum > 0{
             self.imageNum -= 1
+            imageCountLabel.text = "\(imageNum+1)/\(imageCount!)"
             self.imagePrint()
         }
         

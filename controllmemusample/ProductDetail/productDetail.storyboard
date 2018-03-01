@@ -124,6 +124,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuW-zj-UeA">
+                                                <rect key="frame" x="166" y="314" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -160,6 +167,7 @@
                     <connections>
                         <outlet property="ExhibitorName" destination="NXk-LV-Svt" id="CaF-B5-d7P"/>
                         <outlet property="detailLabel" destination="2bP-XI-eTU" id="3Pc-s4-pso"/>
+                        <outlet property="imageCountLabel" destination="VuW-zj-UeA" id="IRK-uI-XKt"/>
                         <outlet property="imageView" destination="DJD-RO-0f4" id="dvy-J4-9UQ"/>
                         <outlet property="placeLabel" destination="10r-Nx-EWQ" id="bFZ-et-UF3"/>
                         <outlet property="priceLabel" destination="kfz-Db-nYI" id="RqR-Ij-fn8"/>

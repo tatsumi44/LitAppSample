@@ -38,7 +38,6 @@ class PurchasedDetailChatViewController: UIViewController,UITableViewDataSource,
         realTimeDB = Database.database().reference()
         realTimeDB.ref.child("realtimechat").child("message").child(buyerProductDetailArrays[cellOfNum]["roomID"]!).observe(.value) { (snap) in
             self.getMainArray = [[String]]()
-            
             for item in snap.children {
                 //ここは非常にハマるfirebaseはjson形式なので変換が必要
                 let child = item as! DataSnapshot

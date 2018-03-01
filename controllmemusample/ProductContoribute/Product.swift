@@ -11,22 +11,21 @@ import UIKit
 class Product {
     var productName: String!
     var price: String!
-    var image1: String!
-    var image2: String!
-    var image3: String!
+//    var image1: String!
+//    var image2: String!
+//    var image3: String!
+    var imageArray = [String]()
     var detail: String!
     var productID: String!
     var uid: String!
+    var photoCount: Int!
     
-    init(productName: String,productID: String,price: String,image1: String,image2: String,image3: String,detail: String,uid: String) {
+    init(productName: String,productID: String,price: String,imageArray: [String],detail: String,uid: String) {
         self.productName = productName
         self.productID = productID
         self.price = price
-        self.image1 = image1
-        self.image2 = image2
-        self.image3 = image3
+        self.imageArray = imageArray
         self.detail = detail
         self.uid = uid
-        
     }
 }

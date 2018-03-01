@@ -22,6 +22,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
     var productArray = [Product]()
     var imagePathArray = [String]()
     var cellOfNum: Int!
+    var photoCount: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,9 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.photoCount = appDelegate.photoCount
+        print("これは\(self.photoCount)")
         self.mainCollectionView.reloadData()
         productArray = [Product]()
         getmainArray = [StorageReference]()
@@ -44,8 +48,16 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
                 print("Error getting documents: \(error)")
             }else{
                 for document in snap!.documents {
-                    self.productArray.append(Product(productName: "\(document.data()["productName"] as! String)", productID: "\(document.documentID)", price: "\(document.data()["price"] as! String)", image1: "\(document.data()["image1"] as! String)", image2: "\(document.data()["image2"] as! String)", image3: "\(document.data()["image3"] as! String)", detail: "\(document.data()["detail"] as! String)", uid: "\(document.data()["uid"] as! String)"))
-                    self.imagePathArray.append(document.data()["image1"] as! String)
+                    let image1 = document.data()["imagePath"]! as? [String]
+                    print(image1![0])
+                    print(String(describing: type(of: image1![0])))
+
+                    self.productArray.append(Product(productName: "\(document.data()["productName"] as! String)", productID: "\(document.documentID)", price: "\(document.data()["price"] as! String)", imageArray: image1!, detail: "\(document.data()["detail"] as! String)", uid: "\(document.data()["uid"] as! String)"))
+                    
+                   
+                        self.imagePathArray.append(image1![0])
+                    
+                    
                 }
                 print(self.productArray)
                 for path in self.imagePathArray{
@@ -60,9 +72,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
             }
         }
     }
-   
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -84,20 +94,19 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
             if let error = error {
                 // Handle any errors
             } else {
+                print(url!)
                 //imageViewに描画、SDWebImageライブラリを使用して描画
                 imageView.sd_setImage(with: url!, completed: nil)
-                
+
             }
         }
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         cellOfNum = indexPath.row
         appDelegate.cellOfNum = self.cellOfNum
-        
     }
-   
-    
 }
