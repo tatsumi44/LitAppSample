@@ -46,6 +46,10 @@ class CategorySelectViewController: UIViewController {
         
     }
 
+    @IBAction func back(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+    }
+    
  
 
 }

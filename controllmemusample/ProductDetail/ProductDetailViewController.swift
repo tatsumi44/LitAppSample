@@ -141,9 +141,10 @@ class ProductDetailViewController: UIViewController {
     }
     
     @IBAction func backViewContorollerButton(_ sender: Any) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "A", bundle: nil)
-        let nextView = storyboard.instantiateInitialViewController()
-        present(nextView!, animated: true, completion: nil)
+//        let storyboard: UIStoryboard = UIStoryboard(name: "A", bundle: nil)
+//        let nextView = storyboard.instantiateInitialViewController()
+//        present(nextView!, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     

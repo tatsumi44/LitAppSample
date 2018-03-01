@@ -109,6 +109,9 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITextFieldDele
         return true
     }
     
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     

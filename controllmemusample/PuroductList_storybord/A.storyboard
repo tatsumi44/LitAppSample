@@ -64,6 +64,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="VDQ-dp-CCS" kind="show" id="BWp-2r-yap"/>
                                         </connections>
@@ -77,7 +78,7 @@
                                     <navigationItem title="教科書" id="kcl-zv-VJ4">
                                         <barButtonItem key="rightBarButtonItem" title="投稿" id="jRS-vs-Bvp">
                                             <connections>
-                                                <segue destination="BKj-V7-ayT" kind="show" id="Edx-eG-YNi"/>
+                                                <segue destination="BKj-V7-ayT" kind="show" id="o2q-cg-taa"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -143,6 +144,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="VDQ-dp-CCS" kind="show" id="uKd-m9-RaW"/>
                                         </connections>
@@ -156,7 +158,7 @@
                                     <navigationItem title="ノート・レジュメ" id="aLq-9q-N4l">
                                         <barButtonItem key="rightBarButtonItem" title="投稿" id="fZg-ZC-Cqb">
                                             <connections>
-                                                <segue destination="BKj-V7-ayT" kind="show" id="pTz-Xe-qMS"/>
+                                                <segue destination="BKj-V7-ayT" kind="show" id="d6n-vL-yf9"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -222,6 +224,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="VDQ-dp-CCS" kind="show" id="hKH-b3-7gY"/>
                                         </connections>
@@ -235,7 +238,7 @@
                                     <navigationItem title="過去問" id="GKn-Ju-a5k">
                                         <barButtonItem key="rightBarButtonItem" title="投稿" id="Pbz-Wy-T59">
                                             <connections>
-                                                <segue destination="BKj-V7-ayT" kind="show" action="showDetailViewController:sender:" id="1Ne-5G-QOJ"/>
+                                                <segue destination="BKj-V7-ayT" kind="show" action="showDetailViewController:sender:" id="Gz9-lF-6gn"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -273,7 +276,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pTz-Xe-qMS"/>
-        <segue reference="BWp-2r-yap"/>
+        <segue reference="Gz9-lF-6gn"/>
+        <segue reference="hKH-b3-7gY"/>
     </inferredMetricsTieBreakers>
 </document>
