@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fcn-u5-VBP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VYb-XN-Gyq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,54 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--カテゴリーを選択-->
-        <scene sceneID="Wel-ar-qu6">
-            <objects>
-                <viewController id="BMz-NU-8oy" customClass="CategorySelectViewController" customModule="controllmemusample" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gr5-zP-cCt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeQ-P9-1aX">
-                                <rect key="frame" x="87" y="180" width="200" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="教科書"/>
-                                <connections>
-                                    <action selector="selectButtonWithSender:" destination="BMz-NU-8oy" eventType="touchUpInside" id="A0b-gC-0KT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTv-Th-S0q">
-                                <rect key="frame" x="87" y="290" width="200" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="ノート、レジュメ"/>
-                                <connections>
-                                    <action selector="selectButtonWithSender:" destination="BMz-NU-8oy" eventType="touchUpInside" id="O2J-Pk-Xhl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bc7-Sq-Ncx">
-                                <rect key="frame" x="87" y="401" width="200" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="過去問"/>
-                                <connections>
-                                    <action selector="selectButtonWithSender:" destination="BMz-NU-8oy" eventType="touchUpInside" id="8GN-Hn-5Yy"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="OgZ-zu-kt5"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="カテゴリーを選択" id="ZMj-6a-TCO"/>
-                    <connections>
-                        <segue destination="3Yx-7B-R1Z" kind="show" identifier="productContribution" id="9dd-Nh-try"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jXF-Qz-taA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="516" y="153.37331334332833"/>
-        </scene>
         <!--Product Contoribution View Controller-->
         <scene sceneID="9wT-aB-jNT">
             <objects>
@@ -78,6 +30,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <imageView key="backgroundView" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" id="YQW-jc-BwH">
+                                    <rect key="frame" x="0.0" y="0.0" width="114" height="106"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Kgm-kb-Wvy">
                                         <rect key="frame" x="3" y="0.0" width="108" height="98"/>
@@ -85,24 +41,10 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="108" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YQW-jc-BwH">
-                                                    <rect key="frame" x="-1" y="3" width="105" height="92"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
                                         </view>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVM-UW-VNe">
-                                <rect key="frame" x="30" y="200" width="315" height="30"/>
-                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="画像をアルバムから選択"/>
-                                <connections>
-                                    <action selector="selectImageButton:" destination="3Yx-7B-R1Z" eventType="touchUpInside" id="Lx3-Rc-iWv"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="商品名を選択してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ik-vA-fz7">
                                 <rect key="frame" x="30" y="261" width="315" height="30"/>
                                 <nil key="textColor"/>
@@ -133,6 +75,14 @@
                                 <state key="normal" title="決定"/>
                                 <connections>
                                     <action selector="decideButton:" destination="3Yx-7B-R1Z" eventType="touchUpInside" id="CS2-tA-4c4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVM-UW-VNe">
+                                <rect key="frame" x="30" y="178" width="315" height="30"/>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="画像をアルバムから選択"/>
+                                <connections>
+                                    <action selector="selectImageButton:" destination="3Yx-7B-R1Z" eventType="touchUpInside" id="Lx3-Rc-iWv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -178,25 +128,94 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNK-Km-LsC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320.8" y="151.57421289355324"/>
+            <point key="canvasLocation" x="5055.1999999999998" y="196.55172413793105"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="aLj-oz-HFH">
+        <!--Category Select View Controller-->
+        <scene sceneID="Cvn-ZP-g3v">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fcn-u5-VBP" sceneMemberID="viewController">
+                <viewController id="5Pa-Z0-9yL" customClass="CategorySelectViewController" customModule="controllmemusample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Duj-hI-dgN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhZ-S9-AxR">
+                                <rect key="frame" x="87" y="139" width="200" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="教科書"/>
+                                <connections>
+                                    <action selector="selectButtonWithSender:" destination="5Pa-Z0-9yL" eventType="touchUpInside" id="VrP-Ws-Ufu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vn-1M-fRt">
+                                <rect key="frame" x="87" y="249" width="200" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="ノート、レジュメ"/>
+                                <connections>
+                                    <action selector="selectButtonWithSender:" destination="5Pa-Z0-9yL" eventType="touchUpInside" id="tLS-bs-7iJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mds-uz-clh">
+                                <rect key="frame" x="87" y="360" width="200" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="過去問"/>
+                                <connections>
+                                    <action selector="selectButtonWithSender:" destination="5Pa-Z0-9yL" eventType="touchUpInside" id="7VA-jC-Br1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jJo-Bo-xhB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lnr-ot-C30"/>
+                    <connections>
+                        <segue destination="3Yx-7B-R1Z" kind="show" identifier="productContribution" id="yME-vZ-Dm3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9L3-ip-3fK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4100" y="198.35082458770617"/>
+        </scene>
+        <!--B-->
+        <scene sceneID="c3U-Y8-c3g">
+            <objects>
+                <viewControllerPlaceholder storyboardName="B" id="oOb-lZ-DYq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="k1Y-d5-qzQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XB1-OB-g70" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="1070"/>
+        </scene>
+        <!--C-->
+        <scene sceneID="hcA-rh-I5h">
+            <objects>
+                <viewControllerPlaceholder storyboardName="C" id="IAy-pM-ZN7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="QTd-1B-SYA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="014-WD-3QV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="883" y="1168"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="kb5-Da-Zex">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VYb-XN-Gyq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="D20-WC-AEQ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fkb-LM-R16">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T9H-I9-RSC">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BMz-NU-8oy" kind="relationship" relationship="rootViewController" id="3S4-YF-eaG"/>
+                        <segue destination="5Pa-Z0-9yL" kind="relationship" relationship="rootViewController" id="dLZ-Cx-aUT"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H2w-o2-iTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t6U-iP-gav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-268" y="152"/>
+            <point key="canvasLocation" x="3196" y="197.45127436281859"/>
         </scene>
     </scenes>
 </document>

@@ -11,13 +11,21 @@ import UIKit
 class CategorySelectViewController: UIViewController {
     
     var categorynum: Int!
+    var window: UIWindow?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let navigationItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = navigationItem
+        
+       
 
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       
     }
 
     override func didReceiveMemoryWarning() {

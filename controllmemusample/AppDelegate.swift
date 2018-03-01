@@ -21,11 +21,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var photoCount: Int!
     
     
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         let db = Firestore.firestore()
+        var viewControllers: [UIViewController] = []
+        
+        // 1ページ目になるViewController
+        let firstSB = UIStoryboard(name: "A", bundle: nil)
+        let firstVC = firstSB.instantiateInitialViewController()! as UIViewController
+        
+        firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
+        viewControllers.append(firstVC1)
+        
+        // 2ページ目になるViewController
+        let secondSB = UIStoryboard(name: "B", bundle: nil)
+        let secondVC = secondSB.instantiateInitialViewController()! as UIViewController
+        secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
+        viewControllers.append(secondVC)
+        
+        // 3ページ目になるViewController
+        let thirdSB = UIStoryboard(name: "C", bundle: nil)
+        let thirdVC = thirdSB.instantiateInitialViewController()! as UIViewController
+        thirdVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 3)
+        viewControllers.append(thirdVC)
+        
+        // ViewControllerをセット
+        let tabBarController = UITabBarController()
+        tabBarController.setViewControllers(viewControllers, animated: false)
+        
+        // rootViewControllerをUITabBarControllerにする
+        window = UIWindow()
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+        
         // Override point for customization after application launch.
         return true
     }
