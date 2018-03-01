@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let firstVC = firstSB.instantiateInitialViewController()! as UIViewController
         
         firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
-        viewControllers.append(firstVC1)
+        viewControllers.append(firstVC)
         
         // 2ページ目になるViewController
         let secondSB = UIStoryboard(name: "B", bundle: nil)
