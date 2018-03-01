@@ -29,5 +29,11 @@ class SelectListViewController: UIViewController {
         performSegue(withIdentifier: "PurchasedList", sender: nil)
     }
     
+    @IBAction func back(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "A", bundle: nil)
+        let nextView = storyboard.instantiateInitialViewController()
+        present(nextView!, animated: true, completion: nil)
+    }
+    
 
 }

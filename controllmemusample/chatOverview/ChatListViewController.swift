@@ -31,6 +31,7 @@ class ChatListViewController: UIViewController,UITableViewDataSource,UITableView
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         let uid: String = (Auth.auth().currentUser?.uid)!
         db = Firestore.firestore()
         db.collection("matchProduct").whereField("buyerID", isEqualTo: uid).getDocuments { (snap, error) in

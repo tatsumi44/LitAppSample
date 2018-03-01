@@ -11,41 +11,68 @@ import Firebase
 import FirebaseStorage
 import SDWebImage
 
-class SecondViewController: UIViewController,UICollectionViewDataSource {
+class SecondViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
  
   
     @IBOutlet weak var mainCollectionView: UICollectionView!
+    var db1: Firestore!
     var db: DatabaseReference!
     var getmainArray = [StorageReference]()
     var getcontents: String!
-     //ライブサイクル的にviewDidLoadが呼ばれないみたいなので注意が必要(2スクロール目)
+    var productArray = [Product]()
+    var imagePathArray = [String]()
+    var cellOfNum: Int!
+    var photoCount: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainCollectionView.dataSource = self
+        mainCollectionView.delegate = self
+        
+        
         // Do any additional setup after loading the view.
     }
-    //viewWillAppearは呼ばれるので基本的に処理はここに書く
     override func viewWillAppear(_ animated: Bool) {
-       //deligateもここに書く
-        mainCollectionView.dataSource = self
+        super.viewWillAppear(animated)
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.photoCount = appDelegate.photoCount
+        print("これは\(self.photoCount)")
+        self.mainCollectionView.reloadData()
+        productArray = [Product]()
+        getmainArray = [StorageReference]()
+        imagePathArray = [String]()
         let storage = Storage.storage().reference()
-        db = Database.database().reference()
-        db.ref.child("photo").observe(.value) { (snap) in
-            //            self.getMainArray = [[String]]()
-            for item in snap.children {
-                //ここは非常にハマるfirebaseはjson形式なので変換が必要
-                let child = item as! DataSnapshot
-                let dic = child.value as! NSDictionary
-                //imageのpath
-                self.getcontents = dic["path"]! as! String
-                //StorageReference型に変換
-                let ref = storage.child("image/\(self.getcontents!)")
-                self.getmainArray.append(ref)
+        db1 = Firestore.firestore()
+        db1.collection("2").getDocuments { (snap, error) in
+            if let error = error{
+                print("Error getting documents: \(error)")
+            }else{
+                for document in snap!.documents {
+                    let image1 = document.data()["imagePath"]! as? [String]
+                    print(image1![0])
+                    print(String(describing: type(of: image1![0])))
+                    
+                    self.productArray.append(Product(productName: "\(document.data()["productName"] as! String)", productID: "\(document.documentID)", price: "\(document.data()["price"] as! String)", imageArray: image1!, detail: "\(document.data()["detail"] as! String)", uid: "\(document.data()["uid"] as! String)"))
+                    
+                    
+                    self.imagePathArray.append(image1![0])
+                    
+                    
+                }
+                print(self.productArray)
+                for path in self.imagePathArray{
+                    let ref = storage.child("image/goods/\(path)")
+                    self.getmainArray.append(ref)
+                }
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.productArray = self.productArray
+                print("いいね")
+                print(self.getmainArray)
+                self.mainCollectionView.reloadData()
             }
-            print(self.getmainArray)
-            //リロード
-            self.mainCollectionView.reloadData()
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,15 +85,28 @@ class SecondViewController: UIViewController,UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         //セルの中にあるimageViewを指定tag = 1
         let imageView = cell.contentView.viewWithTag(1) as! UIImageView
+        let nameLabel = cell.contentView.viewWithTag(2) as! UILabel
+        let priceLabel = cell.contentView.viewWithTag(3) as! UILabel
+        nameLabel.text = productArray[indexPath.row].productName
+        priceLabel.text = productArray[indexPath.row].price
         //getmainArrayにあるpathをurl型に変換しimageViewに描画
         getmainArray[indexPath.row].downloadURL { url, error in
             if let error = error {
                 // Handle any errors
             } else {
+                print(url!)
                 //imageViewに描画、SDWebImageライブラリを使用して描画
                 imageView.sd_setImage(with: url!, completed: nil)
+                
             }
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        cellOfNum = indexPath.row
+        appDelegate.cellOfNum = self.cellOfNum
     }
 }
