@@ -20,11 +20,19 @@ class OtherMenuViewController: UIViewController {
         let user = Auth.auth().currentUser
         uid = user?.uid
         db = Firestore.firestore()
-        db.collection("users").document(uid).getDocument { (snap, error) in
-            let data = snap?.data()
-            let name = data!["name"] as? String
-            print(name!)
+        if user != nil{
+            db.collection("users").document(uid).getDocument { (snap, error) in
+                let data = snap?.data()
+                let name = data!["name"] as? String
+                print(name!)
+            }
+        }else{
+            let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+            let nextView = storyboard.instantiateInitialViewController()
+            present(nextView!, animated: true, completion: nil)
+            print("ログインいるで")
         }
+        
 
         // Do any additional setup after loading the view.
     }

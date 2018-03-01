@@ -23,8 +23,9 @@ class FirstSelectViewController: UIViewController {
             if Auth.auth().currentUser != nil{
                 //色々済んだら実装
                 self.segueToMain()
+
             }else{
-                print("ログインしてね")
+                print("ログインしてね年エネね")
             }
         })
     }

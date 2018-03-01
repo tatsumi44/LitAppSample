@@ -28,6 +28,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
         super.viewDidLoad()
         mainCollectionView.dataSource = self
         mainCollectionView.delegate = self
+        print("これは\(Auth.auth().currentUser?.uid)です")
         
         
         // Do any additional setup after loading the view.
