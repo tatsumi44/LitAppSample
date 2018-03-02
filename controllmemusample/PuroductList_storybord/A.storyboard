@@ -13,12 +13,14 @@
         <!--Page View Controller-->
         <scene sceneID="i6U-rb-Dav">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="GYr-8M-pkl" customClass="PageViewController" customModule="controllmemusample" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="GYr-8M-pkl" customClass="PageViewController" customModule="controllmemusample" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jOD-OG-ohf"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoe-0E-flQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-351" y="349"/>
+            <point key="canvasLocation" x="327.19999999999999" y="348.57571214392806"/>
         </scene>
-        <!--Item-->
+        <!--First View Controller-->
         <scene sceneID="tyv-mw-abw">
             <objects>
                 <viewController storyboardIdentifier="FirstViewController" id="YTO-Pa-6bY" customClass="FirstViewController" customModule="controllmemusample" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,14 +73,14 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jOC-pj-LnF">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="da8-zn-Zdf">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="教科書" id="kcl-zv-VJ4">
-                                        <barButtonItem key="rightBarButtonItem" title="投稿" id="jRS-vs-Bvp">
+                                    <navigationItem title="Title" id="eIk-Te-iNQ">
+                                        <barButtonItem key="rightBarButtonItem" title="投稿" image="Post.png" id="YVG-6h-Pzq">
                                             <connections>
-                                                <segue destination="BKj-V7-ayT" kind="show" id="o2q-cg-taa"/>
+                                                <segue destination="BKj-V7-ayT" kind="show" id="17G-4f-IGP"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -88,7 +90,6 @@
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="hDC-gH-7lF"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="PaN-SW-cSi"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mainCollectionView" destination="hOf-9D-ere" id="3z9-o2-k0Z"/>
@@ -96,9 +97,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1B-AO-fPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400.80000000000001" y="349.47526236881561"/>
+            <point key="canvasLocation" x="1079.2" y="349.47526236881561"/>
         </scene>
-        <!--Item-->
+        <!--Second View Controller-->
         <scene sceneID="yR4-aT-j68">
             <objects>
                 <viewController storyboardIdentifier="SecondViewController" id="DQA-9f-8s2" customClass="SecondViewController" customModule="controllmemusample" customModuleProvider="target" sceneMemberID="viewController">
@@ -151,14 +152,14 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4eJ-Ea-0Un">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddp-sE-XQ6">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="ノート・レジュメ" id="aLq-9q-N4l">
-                                        <barButtonItem key="rightBarButtonItem" title="投稿" id="fZg-ZC-Cqb">
+                                    <navigationItem title="Title" id="cWT-yq-4vZ">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="Post.png" id="GKU-kd-NZQ">
                                             <connections>
-                                                <segue destination="BKj-V7-ayT" kind="show" id="d6n-vL-yf9"/>
+                                                <segue destination="BKj-V7-ayT" kind="show" id="8Zi-DQ-agj"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -168,7 +169,6 @@
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="ybu-Pe-ld8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ENc-Vb-TWa"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mainCollectionView" destination="IaY-Ep-sKo" id="zvb-MO-Gaw"/>
@@ -176,9 +176,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cez-mp-QqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125.5999999999999" y="348.57571214392806"/>
+            <point key="canvasLocation" x="1804" y="348.57571214392806"/>
         </scene>
-        <!--Item-->
+        <!--Third View Controller-->
         <scene sceneID="18d-Hv-1qm">
             <objects>
                 <viewController storyboardIdentifier="ThirdViewController" id="Hc7-uT-6Pw" customClass="ThirdViewController" customModule="controllmemusample" customModuleProvider="target" sceneMemberID="viewController">
@@ -231,14 +231,14 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2jc-gZ-oqY">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ebi-Lc-Co7">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="過去問" id="GKn-Ju-a5k">
-                                        <barButtonItem key="rightBarButtonItem" title="投稿" id="Pbz-Wy-T59">
+                                    <navigationItem title="Title" id="dES-Pk-1TT">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="Post.png" id="t6R-tF-55M">
                                             <connections>
-                                                <segue destination="BKj-V7-ayT" kind="show" action="showDetailViewController:sender:" id="Gz9-lF-6gn"/>
+                                                <segue destination="BKj-V7-ayT" kind="show" id="Flh-fp-7VK"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -248,7 +248,6 @@
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="VIk-1X-W74"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="yx5-Rc-Sb1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mainCollectionView" destination="o6f-xq-4p7" id="YdI-eH-jb5"/>
@@ -256,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QiY-ML-SYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808.8" y="348.57571214392806"/>
+            <point key="canvasLocation" x="2487.1999999999998" y="348.57571214392806"/>
         </scene>
         <!--productDetail-->
         <scene sceneID="zUa-lG-o2X">
@@ -272,11 +271,14 @@
                 <viewControllerPlaceholder storyboardName="ProductContribution" id="BKj-V7-ayT" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSv-Lf-aTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="336"/>
+            <point key="canvasLocation" x="3642.4000000000001" y="335.5322338830585"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Post.png" width="32" height="32"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gz9-lF-6gn"/>
-        <segue reference="hKH-b3-7gY"/>
+        <segue reference="17G-4f-IGP"/>
+        <segue reference="BWp-2r-yap"/>
     </inferredMetricsTieBreakers>
 </document>

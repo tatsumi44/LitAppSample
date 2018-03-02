@@ -195,7 +195,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fiZ-Lh-s7B"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Tyh-VH-qgQ"/>
+                    <navigationItem key="navigationItem" id="Tyh-VH-qgQ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back22.png" id="SkT-dU-3nD"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="Hxh-Yc-qfU" kind="show" identifier="PurchasedList" id="a6e-Fg-1ze"/>
                         <segue destination="o6y-75-zZu" kind="show" identifier="MyBuying" id="4vH-8a-ijM"/>
@@ -218,12 +220,32 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="3fR-pc-P8H">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="147" id="3fR-pc-P8H">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="147"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3fR-pc-P8H" id="eJV-Nf-sgc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="146.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K41-zm-s0s">
+                                                    <rect key="frame" x="0.0" y="9" width="152" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iv-St-7rD">
+                                                    <rect key="frame" x="160" y="32" width="200" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="とのチャット" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SD-N9-taZ">
+                                                    <rect key="frame" x="173" y="74" width="175" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -233,7 +255,7 @@
                         <viewLayoutGuide key="safeArea" id="lOl-Fa-6eC"/>
                     </view>
                     <connections>
-                        <outlet property="mainTableView" destination="3Pj-5b-Tle" id="EjD-ta-D6t"/>
+                        <outlet property="mainTableView" destination="3Pj-5b-Tle" id="DRm-GJ-kLq"/>
                         <segue destination="0so-Lg-D56" kind="show" identifier="ChatDetail" id="Iij-fa-Zed"/>
                     </connections>
                 </viewController>
@@ -260,4 +282,7 @@
             <point key="canvasLocation" x="103" y="132"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back22.png" width="16" height="16"/>
+    </resources>
 </document>

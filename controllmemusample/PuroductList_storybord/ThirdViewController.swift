@@ -22,6 +22,7 @@ class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollect
     var imagePathArray = [String]()
     var cellOfNum: Int!
     var photoCount: Int!
+    let sectionID: Int = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,5 +108,6 @@ class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollect
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         cellOfNum = indexPath.row
         appDelegate.cellOfNum = self.cellOfNum
+        appDelegate.sectionID = self.sectionID
     }
 }

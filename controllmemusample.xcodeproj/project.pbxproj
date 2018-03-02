@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A4C54ABC4DA7492FA0C44A1B /* Pods_controllmemusample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4933FA21958E3CFA92A1C683 /* Pods_controllmemusample.framework */; };
+		B917CF402049230C0074B846 /* Post.png in Resources */ = {isa = PBXBuildFile; fileRef = B917CF3F2049230C0074B846 /* Post.png */; };
 		B935015A20404D08000F554B /* OtherMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935015920404D08000F554B /* OtherMenuViewController.swift */; };
 		B935015D20412609000F554B /* ProductContribution.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B935015C20412609000F554B /* ProductContribution.storyboard */; };
 		B935015F20413ACF000F554B /* CategorySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935015E20413ACE000F554B /* CategorySelectViewController.swift */; };
@@ -26,7 +27,6 @@
 		B99025C520456A4700EC7108 /* PurchasedDetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99025C420456A4700EC7108 /* PurchasedDetailChatViewController.swift */; };
 		B9D7D8DE203F2FA00028EF07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D8DD203F2FA00028EF07 /* AppDelegate.swift */; };
 		B9D7D8E0203F2FA00028EF07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D8DF203F2FA00028EF07 /* ViewController.swift */; };
-		B9D7D8E3203F2FA00028EF07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8E1203F2FA00028EF07 /* Main.storyboard */; };
 		B9D7D8E5203F2FA00028EF07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8E4203F2FA00028EF07 /* Assets.xcassets */; };
 		B9D7D8E8203F2FA00028EF07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8E6203F2FA00028EF07 /* LaunchScreen.storyboard */; };
 		B9D7D8F0203F2FE60028EF07 /* A.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7D8EF203F2FE50028EF07 /* A.storyboard */; };
@@ -48,6 +48,7 @@
 /* Begin PBXFileReference section */
 		14876070071AE01B4FF58E63 /* Pods-controllmemusample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-controllmemusample.release.xcconfig"; path = "Pods/Target Support Files/Pods-controllmemusample/Pods-controllmemusample.release.xcconfig"; sourceTree = "<group>"; };
 		4933FA21958E3CFA92A1C683 /* Pods_controllmemusample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_controllmemusample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B917CF3F2049230C0074B846 /* Post.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Post.png; sourceTree = "<group>"; };
 		B935015920404D08000F554B /* OtherMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherMenuViewController.swift; sourceTree = "<group>"; };
 		B935015C20412609000F554B /* ProductContribution.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductContribution.storyboard; sourceTree = "<group>"; };
 		B935015E20413ACE000F554B /* CategorySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		B9D7D8DA203F2FA00028EF07 /* controllmemusample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = controllmemusample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D7D8DD203F2FA00028EF07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9D7D8DF203F2FA00028EF07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B9D7D8E2203F2FA00028EF07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9D7D8E4203F2FA00028EF07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9D7D8E7203F2FA00028EF07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9D7D8E9203F2FA00028EF07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -199,7 +199,6 @@
 				B9D7D909204026590028EF07 /* Kanematsu_auditorium.jpg */,
 				B9D7D8DD203F2FA00028EF07 /* AppDelegate.swift */,
 				B9D7D8DF203F2FA00028EF07 /* ViewController.swift */,
-				B9D7D8E1203F2FA00028EF07 /* Main.storyboard */,
 				B935015620403554000F554B /* Auth */,
 				B9D7D90620401B650028EF07 /* PuroductList_storybord */,
 				B935018620430C07000F554B /* ProductContoribute */,
@@ -217,6 +216,7 @@
 		B9D7D90620401B650028EF07 /* PuroductList_storybord */ = {
 			isa = PBXGroup;
 			children = (
+				B917CF3F2049230C0074B846 /* Post.png */,
 				B9D7D8EF203F2FE50028EF07 /* A.storyboard */,
 				B9D7D8FB203F33970028EF07 /* PageViewController.swift */,
 				B9D7D8FD203F35740028EF07 /* FirstViewController.swift */,
@@ -303,13 +303,13 @@
 				B9D7D8E8203F2FA00028EF07 /* LaunchScreen.storyboard in Resources */,
 				B93501962043E5FC000F554B /* next22.png in Resources */,
 				B9D7D90A204026590028EF07 /* Kanematsu_auditorium.jpg in Resources */,
+				B917CF402049230C0074B846 /* Post.png in Resources */,
 				B9D7D8F4203F300E0028EF07 /* C.storyboard in Resources */,
 				B9D7D8F2203F2FFD0028EF07 /* B.storyboard in Resources */,
 				B93501902043D743000F554B /* productDetail.storyboard in Resources */,
 				B9D7D904203FEB850028EF07 /* GoogleService-Info.plist in Resources */,
 				B9D7D8E5203F2FA00028EF07 /* Assets.xcassets in Resources */,
 				B93501952043E5FC000F554B /* back22.png in Resources */,
-				B9D7D8E3203F2FA00028EF07 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,14 +423,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B9D7D8E1203F2FA00028EF07 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B9D7D8E2203F2FA00028EF07 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B9D7D8E6203F2FA00028EF07 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

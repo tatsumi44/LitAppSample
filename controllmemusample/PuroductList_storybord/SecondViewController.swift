@@ -23,6 +23,7 @@ class SecondViewController: UIViewController,UICollectionViewDataSource,UICollec
     var imagePathArray = [String]()
     var cellOfNum: Int!
     var photoCount: Int!
+    let sectionID: Int = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,5 +109,6 @@ class SecondViewController: UIViewController,UICollectionViewDataSource,UICollec
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         cellOfNum = indexPath.row
         appDelegate.cellOfNum = self.cellOfNum
+        appDelegate.sectionID = self.sectionID
     }
 }

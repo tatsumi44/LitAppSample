@@ -23,6 +23,9 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
     var imagePathArray = [String]()
     var cellOfNum: Int!
     var photoCount: Int!
+    let sectionID: Int = 1
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+     
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         self.photoCount = appDelegate.photoCount
         print("これは\(self.photoCount)")
@@ -109,5 +113,9 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         cellOfNum = indexPath.row
         appDelegate.cellOfNum = self.cellOfNum
+        appDelegate.sectionID = self.sectionID
     }
+
+    
+    
 }

@@ -30,6 +30,9 @@ class ProductDetailViewController: UIViewController {
     var getmainArray = [StorageReference]()
     var imageNum = 0
     var imageCount: Int!
+    var sectionID: Int!
+    var exhibitationID:String!
+    
     
     
     override func viewDidLoad() {
@@ -40,20 +43,21 @@ class ProductDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         myuid = Auth.auth().currentUser?.uid
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.productArray = appDelegate.productArray
+        self.cellOfNum = appDelegate.cellOfNum
+        exhibitationID = self.productArray[self.cellOfNum].uid
         db = Firestore.firestore()
         let storage = Storage.storage().reference()
-        db.collection("users").document(myuid).getDocument { (snap, error) in
+        db.collection("users").document(exhibitationID).getDocument { (snap, error) in
             if let error = error{
                 print("error")
             }else{
                let data = snap?.data()
-                self.exhibitationName = data!["name"] as! String
-                self.placeLabel.text = self.exhibitationName
+                self.ExhibitorName.text = data!["name"] as? String
+//                self.placeLabel.text = self.exhibitationName
             }
         }
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.productArray = appDelegate.productArray
-        self.cellOfNum = appDelegate.cellOfNum
         print(self.productArray[self.cellOfNum].productID)
         productName.text = self.productArray[self.cellOfNum].productName
         priceLabel.text = self.productArray[self.cellOfNum].price
@@ -113,12 +117,15 @@ class ProductDetailViewController: UIViewController {
             self.productid = self.productArray[self.cellOfNum].productID
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //            appDelegate.myuid = self.myuid
+            self.sectionID = appDelegate.sectionID
             appDelegate.opposerid = self.opposerid
             appDelegate.productid = self.productid
+            appDelegate.sectionID = self.sectionID
             self.db.collection("matchProduct").addDocument(data: [
                 "exhibitorID": self.opposerid,
                 "buyerID": self.myuid,
-                "productID": self.productid
+                "productID": self.productid,
+                "sectionID": String(self.sectionID)
                 ])
             let storyboard: UIStoryboard = UIStoryboard(name: "Chat", bundle: nil)
             let nextView = storyboard.instantiateInitialViewController()

@@ -46,7 +46,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zNl-fg-sC9"/>
                     <connections>
-                        <segue destination="Lqt-1G-BRI" kind="presentation" identifier="GoMainContents" id="FcW-08-U2f"/>
+                        <segue destination="Lqt-1G-BRI" kind="show" identifier="GoMainContents" id="FcW-08-U2f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ol-Cx-AfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,17 +106,17 @@
                     <connections>
                         <outlet property="emailTextField" destination="8w1-n5-Crh" id="zlP-cO-Mwd"/>
                         <outlet property="passwordTextField" destination="kQz-gR-JGe" id="RFl-27-M2d"/>
-                        <segue destination="Lqt-1G-BRI" kind="presentation" identifier="LoginMainStoprybord" id="dlu-iK-8un"/>
+                        <segue destination="Lqt-1G-BRI" kind="show" identifier="LoginMainStoprybord" id="dlu-iK-8un"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqD-Cc-mfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="998" y="-462"/>
         </scene>
-        <!--Main-->
+        <!--A-->
         <scene sceneID="bVu-nv-x2A">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="Lqt-1G-BRI" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="A" id="Lqt-1G-BRI" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4g-Mb-QVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2427.1999999999998" y="68.365817091454275"/>
@@ -248,7 +248,7 @@
                         <outlet property="courseTextField" destination="fEc-QM-4WZ" id="b5q-2E-BTy"/>
                         <outlet property="gradeTextField" destination="f5J-CY-G9c" id="Dto-HN-ZgS"/>
                         <outlet property="nameTextField" destination="iU4-gc-T2Z" id="UL3-Zk-1ZA"/>
-                        <segue destination="Lqt-1G-BRI" kind="presentation" identifier="RegisterMainStorybord" id="cdA-0I-OZ7"/>
+                        <segue destination="Lqt-1G-BRI" kind="show" identifier="RegisterMainStorybord" id="cdA-0I-OZ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECy-Xg-JLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -278,6 +278,6 @@
         <image name="Kanematsu_auditorium.jpg" width="1920" height="1536"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dlu-iK-8un"/>
+        <segue reference="cdA-0I-OZ7"/>
     </inferredMetricsTieBreakers>
 </document>

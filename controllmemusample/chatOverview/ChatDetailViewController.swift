@@ -33,7 +33,7 @@ class ChatDetailViewController: UIViewController,UITableViewDataSource,UITextFie
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(sellerProductDetailArrays[cellOfNum])
+        print("我こそは\(sellerProductDetailArrays[cellOfNum])")
         realTimeDB = Database.database().reference()
         realTimeDB.ref.child("realtimechat").child("message").child(sellerProductDetailArrays[cellOfNum]["roomID"]!).observe(.value) { (snap) in
             self.getMainArray = [[String]]()

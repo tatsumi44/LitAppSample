@@ -14,6 +14,9 @@ class OtherMenuViewController: UIViewController {
     var uid: String!
     var db: Firestore!
     
+   
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

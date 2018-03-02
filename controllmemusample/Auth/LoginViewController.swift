@@ -33,10 +33,23 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
                 print("error")
                 //後でアラートとか書こうと思ったり
             }else{
-                self.performSegue(withIdentifier: "LoginMainStoprybord", sender: nil)
+                if let tabvc = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController  {
+                    
+                    //左から２番目のタブアイコンを選択状態にする(0が一番左)
+                    tabvc.selectedIndex = 0
+                    
+                }
+                
+                // 移動先ViewControllerのインスタンスを取得（ストーリーボードIDから）
+                let storyboard = UIStoryboard(name: "A", bundle: nil)
+                let dstView = storyboard.instantiateViewController(withIdentifier: "FirstViewController")
+                
+                self.tabBarController?.navigationController?.present(dstView, animated: true, completion: nil)
+
             }
         }
     }
+ 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
        textField.resignFirstResponder()
         return true

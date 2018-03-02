@@ -9,6 +9,9 @@
 import UIKit
 
 class SelectListViewController: UIViewController {
+    
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +33,11 @@ class SelectListViewController: UIViewController {
     }
     
     @IBAction func back(_ sender: Any) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "A", bundle: nil)
-        let nextView = storyboard.instantiateInitialViewController()
-        present(nextView!, animated: true, completion: nil)
+//        let storyboard: UIStoryboard = UIStoryboard(name: "A", bundle: nil)
+//        let nextView = storyboard.instantiateInitialViewController()
+//        present(nextView!, animated: true, completion: nil)
+        
+        dismiss(animated: true, completion: nil)
     }
     
 
