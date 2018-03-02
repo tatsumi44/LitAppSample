@@ -125,7 +125,8 @@ class ProductDetailViewController: UIViewController {
                 "exhibitorID": self.opposerid,
                 "buyerID": self.myuid,
                 "productID": self.productid,
-                "sectionID": String(self.sectionID)
+                "sectionID": String(self.sectionID),
+                "imagePath": self.productArray[self.cellOfNum].imageArray[0]
                 ])
             let storyboard: UIStoryboard = UIStoryboard(name: "Chat", bundle: nil)
             let nextView = storyboard.instantiateInitialViewController()

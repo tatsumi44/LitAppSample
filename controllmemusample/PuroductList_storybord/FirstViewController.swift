@@ -59,9 +59,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
 
                     self.productArray.append(Product(productName: "\(document.data()["productName"] as! String)", productID: "\(document.documentID)", price: "\(document.data()["price"] as! String)", imageArray: image1!, detail: "\(document.data()["detail"] as! String)", uid: "\(document.data()["uid"] as! String)"))
                     
-                   
                         self.imagePathArray.append(image1![0])
-                    
                     
                 }
                 print(self.productArray)

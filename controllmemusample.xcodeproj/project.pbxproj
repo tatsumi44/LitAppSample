@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A4C54ABC4DA7492FA0C44A1B /* Pods_controllmemusample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4933FA21958E3CFA92A1C683 /* Pods_controllmemusample.framework */; };
 		B917CF402049230C0074B846 /* Post.png in Resources */ = {isa = PBXBuildFile; fileRef = B917CF3F2049230C0074B846 /* Post.png */; };
+		B917CF4220497D3A0074B846 /* ChatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B917CF4120497D3A0074B846 /* ChatList.swift */; };
 		B935015A20404D08000F554B /* OtherMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935015920404D08000F554B /* OtherMenuViewController.swift */; };
 		B935015D20412609000F554B /* ProductContribution.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B935015C20412609000F554B /* ProductContribution.storyboard */; };
 		B935015F20413ACF000F554B /* CategorySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935015E20413ACE000F554B /* CategorySelectViewController.swift */; };
@@ -49,6 +50,7 @@
 		14876070071AE01B4FF58E63 /* Pods-controllmemusample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-controllmemusample.release.xcconfig"; path = "Pods/Target Support Files/Pods-controllmemusample/Pods-controllmemusample.release.xcconfig"; sourceTree = "<group>"; };
 		4933FA21958E3CFA92A1C683 /* Pods_controllmemusample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_controllmemusample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B917CF3F2049230C0074B846 /* Post.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Post.png; sourceTree = "<group>"; };
+		B917CF4120497D3A0074B846 /* ChatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatList.swift; sourceTree = "<group>"; };
 		B935015920404D08000F554B /* OtherMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherMenuViewController.swift; sourceTree = "<group>"; };
 		B935015C20412609000F554B /* ProductContribution.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductContribution.storyboard; sourceTree = "<group>"; };
 		B935015E20413ACE000F554B /* CategorySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				B93501A32045482D000F554B /* ChatDetailViewController.swift */,
 				B99025C2204560E000EC7108 /* PurchasedViewController.swift */,
 				B99025C420456A4700EC7108 /* PurchasedDetailChatViewController.swift */,
+				B917CF4120497D3A0074B846 /* ChatList.swift */,
 			);
 			path = chatOverview;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				B93501922043D7BA000F554B /* ProductDetailViewController.swift in Sources */,
 				B9D7D8FC203F33970028EF07 /* PageViewController.swift in Sources */,
 				B9D7D8E0203F2FA00028EF07 /* ViewController.swift in Sources */,
+				B917CF4220497D3A0074B846 /* ChatList.swift in Sources */,
 				B9D7D8DE203F2FA00028EF07 /* AppDelegate.swift in Sources */,
 				B9D7D900203F35910028EF07 /* SecondViewController.swift in Sources */,
 				B93501A42045482D000F554B /* ChatDetailViewController.swift in Sources */,
