@@ -14,7 +14,6 @@ class PurchasedDetailChatViewController: UIViewController,UITableViewDataSource,
 
     @IBOutlet weak var mainTableView: UITableView!
     @IBOutlet weak var textField: UITextField!
-    var buyerProductDetailArrays = [[String:String]]()
     var cellOfNum: Int!
     var realTimeDB: DatabaseReference!
     var db: Firestore!
@@ -22,6 +21,7 @@ class PurchasedDetailChatViewController: UIViewController,UITableViewDataSource,
     var getMainArray = [[String]]()
     var commnetArray = [String:String]()
     var myName: String!
+    var cellDetailArray = [PurchasedList]()
     
     
     override func viewDidLoad() {
@@ -32,11 +32,10 @@ class PurchasedDetailChatViewController: UIViewController,UITableViewDataSource,
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        print(buyerProductDetailArrays[cellOfNum])
+        super.viewWillAppear(animated)
         realTimeDB = Database.database().reference()
-        realTimeDB.ref.child("realtimechat").child("message").child(buyerProductDetailArrays[cellOfNum]["roomID"]!).observe(.value) { (snap) in
+        realTimeDB.ref.child("realtimechat").child("message").child(cellDetailArray[cellOfNum].roomID!).observe(.value) { (snap) in
             self.getMainArray = [[String]]()
             for item in snap.children {
                 //ここは非常にハマるfirebaseはjson形式なので変換が必要
@@ -68,7 +67,7 @@ class PurchasedDetailChatViewController: UIViewController,UITableViewDataSource,
     
     @IBAction func tap(_ sender: Any) {
         commnetArray = ["name": myName,"comment": textField.text!]
-        realTimeDB.ref.child("realtimechat").child("message").child(buyerProductDetailArrays[cellOfNum]["roomID"]!).childByAutoId().setValue(commnetArray)
+        realTimeDB.ref.child("realtimechat").child("message").child(cellDetailArray[cellOfNum].roomID!).childByAutoId().setValue(commnetArray)
         textField.text = ""
     }
     

@@ -15,9 +15,12 @@ class PurchasedViewController: UIViewController,UITableViewDataSource,UITableVie
     var buyerName: String!
     var productID: String!
     var roomID: String!
-    var buyerProductDetailArray = [String:String]()
-    var buyerProductDetailArrays = [[String:String]]()
+   
     var cellOfNum: Int!
+    var sectionID: String!
+    var imageParh: String!
+    var cellDetailArray = [PurchasedList]()
+    let storage = Storage.storage().reference()
     
     @IBOutlet weak var mainTableView: UITableView!
     
@@ -26,14 +29,16 @@ class PurchasedViewController: UIViewController,UITableViewDataSource,UITableVie
         super.viewDidLoad()
         mainTableView.dataSource = self
         mainTableView.delegate = self
+         mainTableView.rowHeight = 100.0
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let uid: String = (Auth.auth().currentUser?.uid)!
         db = Firestore.firestore()
+        cellDetailArray = [PurchasedList]()
         db.collection("matchProduct").whereField("exhibitorID", isEqualTo: uid).getDocuments { (snap, error) in
-            self.buyerProductDetailArrays = [[String:String]]()
+            
             if let error = error{
                 print("error")
             }else{
@@ -42,21 +47,11 @@ class PurchasedViewController: UIViewController,UITableViewDataSource,UITableVie
                     self.roomID = document.documentID
                     self.buyerID = data["buyerID"] as! String
                     self.productID = data["productID"] as! String
-//                    print(data)
-//                    print("これが\(document.documentID)")
-                    self.db.collection("users").document(self.buyerID).getDocument(completion: { (snap, error) in
-                        if let error = error{
-                            print("error")
-                        }else{
-                            let data = snap?.data()
-                            self.buyerName = data!["name"] as! String
-                            self.buyerProductDetailArray = ["roomID": self.roomID,"buyerID":self.buyerID,"productID": self.productID,"buyerName": self.buyerName]
-                            self.buyerProductDetailArrays.append(self.buyerProductDetailArray)
-                        }
-//                        print(self.buyerProductDetailArrays)
-                        self.mainTableView.reloadData()
-                    })
+                    self.sectionID = data["sectionID"] as! String
+                    self.imageParh = data["imagePath"] as! String
+                    self.cellDetailArray.append(PurchasedList(roomID: self.roomID!, buyerID: self.buyerID!, imagePath: self.imageParh!, productID: self.productID!, sectionID: self.sectionID!))
                 }
+                self.mainTableView.reloadData()
             }
         }
     }
@@ -66,12 +61,35 @@ class PurchasedViewController: UIViewController,UITableViewDataSource,UITableVie
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return buyerProductDetailArrays.count
+        return cellDetailArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        cell?.textLabel?.text = "\(buyerProductDetailArrays[indexPath.row]["buyerName"]!)さんが購入しました。"
+        let imageView = cell?.contentView.viewWithTag(1) as! UIImageView
+        let nameLabel = cell?.contentView.viewWithTag(2) as! UILabel
+        let imagePath: String = cellDetailArray[indexPath.row].imagePath!
+        let ref = storage.child("image/goods/\(imagePath)")
+        print("refは\(ref)")
+        ref.downloadURL { url, error in
+            if let error = error {
+                // Handle any errors
+            } else {
+                print(url!)
+                //imageViewに描画、SDWebImageライブラリを使用して描画
+                imageView.sd_setImage(with: url!, completed: nil)
+                self.db.collection("users").document(self.cellDetailArray[indexPath.row].buyerID).getDocument(completion: { (snap, error) in
+                    if let error = error{
+                        print("error")
+                    }else{
+                        let data = snap?.data()
+                        let name: String = data!["name"] as! String
+                        nameLabel.text = "\(name)"
+                    }
+                })
+                
+            }
+        }
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -80,7 +98,7 @@ class PurchasedViewController: UIViewController,UITableViewDataSource,UITableVie
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let purchasedDetailController = segue.destination as! PurchasedDetailChatViewController
-        purchasedDetailController.buyerProductDetailArrays = self.buyerProductDetailArrays
+        purchasedDetailController.cellDetailArray = self.cellDetailArray
         purchasedDetailController.cellOfNum = self.cellOfNum
     }
 }

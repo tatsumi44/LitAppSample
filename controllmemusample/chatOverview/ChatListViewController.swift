@@ -52,7 +52,6 @@ class ChatListViewController: UIViewController,UITableViewDataSource,UITableView
                     self.cellDetailArray.append(ChatList(roomID: self.roomID!, exhibitorID: self.sellerID!, imagePath: data["imagePath"]! as! String, productID: self.productID!, sectionID: self.sectionId!))
                     print("roomid\(self.roomID)")
                 }
-                print("これは\(self.cellDetailArray[1].imagePath!)")
                 self.mainTableView.reloadData()
             }
         }
@@ -76,7 +75,7 @@ class ChatListViewController: UIViewController,UITableViewDataSource,UITableView
         print("refは\(ref)")
         ref.downloadURL { url, error in
             if let error = error {
-                // Handle any errors
+                print("error")
             } else {
                 print(url!)
                 //imageViewに描画、SDWebImageライブラリを使用して描画
