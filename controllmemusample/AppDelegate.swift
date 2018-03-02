@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import DKImagePickerController
-
+import NVActivityIndicatorView
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

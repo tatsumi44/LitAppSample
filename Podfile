@@ -11,6 +11,7 @@ target 'controllmemusample' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'DKImagePickerController'
+  pod 'NVActivityIndicatorView'
 
   # Pods for controllmemusample
 

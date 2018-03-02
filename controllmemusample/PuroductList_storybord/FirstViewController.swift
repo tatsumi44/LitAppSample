@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import SDWebImage
+import NVActivityIndicatorView
 
 class FirstViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
@@ -24,8 +25,10 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
     var cellOfNum: Int!
     var photoCount: Int!
     let sectionID: Int = 1
+    
 
-
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +41,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-     
+        indicator.startAnimating()
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         self.photoCount = appDelegate.photoCount
         print("これは\(self.photoCount)")
@@ -76,6 +79,11 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        indicator.stopAnimating()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import NVActivityIndicatorView
 
 class FirstSelectViewController: UIViewController {
     var handle: AuthStateDidChangeListenerHandle?
