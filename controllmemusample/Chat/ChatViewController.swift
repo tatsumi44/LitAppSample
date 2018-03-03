@@ -62,7 +62,7 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITextFieldDele
                     self.roomID = document.documentID
                 }
                 //chat用のdbに接続
-                    self.realTimeDB = Database.database().reference()
+                self.realTimeDB = Database.database().reference()
                 self.realTimeDB.ref.child("realtimechat").child("message").child(self.roomID).observe(.value) { (snap) in
                     print("呼ばれてます")
                     self.getMainArray = [[String]]()
@@ -112,7 +112,4 @@ class ChatViewController: UIViewController,UITableViewDataSource,UITextFieldDele
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
-    
 }

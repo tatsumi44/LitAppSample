@@ -14,10 +14,10 @@ class OtherMenuViewController: UIViewController {
     var uid: String!
     var db: Firestore!
     
-   
-
     
-
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let user = Auth.auth().currentUser
@@ -36,11 +36,11 @@ class OtherMenuViewController: UIViewController {
             print("ログインいるで")
         }
         
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,8 +53,6 @@ class OtherMenuViewController: UIViewController {
             //指定したStorybordの一番最初に画面遷移
             let nextView = storybord.instantiateInitialViewController()
             present(nextView!, animated: true, completion: nil)
-//            UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: false, completion: nil) // コメントアウトするとメモリリークする
-//            UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "FirstSelectViewController")
             print("通っている")
             
         } catch let signOutError as NSError {

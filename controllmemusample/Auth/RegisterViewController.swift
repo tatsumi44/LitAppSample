@@ -55,7 +55,11 @@ class RegisterViewController: UIViewController {
                 if let err = err {
                     print("Error writing document: \(err)")
                 } else {
-                   self.performSegue(withIdentifier: "RegisterMainStorybord", sender: nil)
+                    let storyboard = UIStoryboard(name: "A", bundle: nil)
+                    let dstView = storyboard.instantiateViewController(withIdentifier: "FirstViewController")
+                    self.tabBarController?.present(dstView, animated: true, completion: nil)
+                    //ウルトラ重要、おそらくrootViewControllerが重なっているので解放が必要。
+                    UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: false, completion: nil)
                 }
         }
     }

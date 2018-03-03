@@ -9,15 +9,16 @@
 import UIKit
 import Firebase
 import SDWebImage
-class ProductDetailViewController: UIViewController {
+class ProductDetailViewController: UIViewController,UITableViewDataSource {
+    
+    
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageCountLabel: UILabel!
-    @IBOutlet weak var productName: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var placeLabel: UILabel!
-    @IBOutlet weak var detailLabel: UILabel!
-    @IBOutlet weak var ExhibitorName: UILabel!
+    @IBOutlet weak var subTableView: UITableView!
+    @IBOutlet weak var mainTableView: UITableView!
+    @IBOutlet weak var productDetail: UITextView!
+    
     
     var productArray = [Product]()
     var cellOfNum: Int!
@@ -32,13 +33,26 @@ class ProductDetailViewController: UIViewController {
     var imageCount: Int!
     var sectionID: Int!
     var exhibitationID:String!
-    
+    let productNameListArray = ["商品名","価格","場所","出品者名","カテゴリー"]
+    var productContentsArray = [String]()
+    var sectionName: String!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        subTableView.dataSource = self
+        mainTableView.dataSource = self
+        mainTableView.layer.borderColor = UIColor.black.cgColor
+        mainTableView.layer.borderWidth = 0.5
+        subTableView.layer.borderColor = UIColor.black.cgColor
+        subTableView.layer.borderWidth = 0.5
+        imageView.layer.cornerRadius = 10.0
+        imageView.layer.masksToBounds = true
+        
         // Do any additional setup after loading the view.
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,22 +60,36 @@ class ProductDetailViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.productArray = appDelegate.productArray
         self.cellOfNum = appDelegate.cellOfNum
+        self.sectionID = appDelegate.sectionID
+        
         exhibitationID = self.productArray[self.cellOfNum].uid
         db = Firestore.firestore()
         let storage = Storage.storage().reference()
+        
+        switch sectionID {
+        case 1:
+            sectionName = "教科書"
+        case 2:
+            sectionName = "ノートレジュメ"
+        case 3:
+            sectionName = "過去問"
+        default:
+            return
+        }
         db.collection("users").document(exhibitationID).getDocument { (snap, error) in
             if let error = error{
                 print("error")
             }else{
-               let data = snap?.data()
-                self.ExhibitorName.text = data!["name"] as? String
-//                self.placeLabel.text = self.exhibitationName
+                let data = snap?.data()
+                let name = data!["name"] as? String
+                self.productContentsArray = [self.productArray[self.cellOfNum].productName,self.productArray[self.cellOfNum].price,self.productArray[self.cellOfNum].place,name!,self.sectionName]
+                self.mainTableView.reloadData()
+                self.productDetail.text = self.productArray[self.cellOfNum].detail
+                //                self.placeLabel.text = self.exhibitationName
             }
         }
         print(self.productArray[self.cellOfNum].productID)
-        productName.text = self.productArray[self.cellOfNum].productName
-        priceLabel.text = self.productArray[self.cellOfNum].price
-        detailLabel.text = self.productArray[self.cellOfNum].detail
+        
         print(self.productArray[self.cellOfNum].imageArray)
         print(self.productArray[self.cellOfNum].imageArray.count)
         imageCount = self.productArray[self.cellOfNum].imageArray.count
@@ -85,11 +113,32 @@ class ProductDetailViewController: UIViewController {
         }
         imagePrint()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView.tag == 1{
+            return productNameListArray.count
+        }
+        return productContentsArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if tableView.tag == 1{
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: "Cell1")
+            cell1?.textLabel?.text = productNameListArray[indexPath.row]
+            return cell1!
+        }
+        let cell2 = tableView.dequeueReusableCell(withIdentifier: "Cell2")
+        cell2?.textLabel?.text = productContentsArray[indexPath.row]
+        return cell2!
+    }
+    
     
     @IBAction func nextButton(_ sender: Any) {
         if imageNum < imageCount-1{
@@ -116,7 +165,7 @@ class ProductDetailViewController: UIViewController {
             self.opposerid = self.productArray[self.cellOfNum].uid
             self.productid = self.productArray[self.cellOfNum].productID
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//            appDelegate.myuid = self.myuid
+            //            appDelegate.myuid = self.myuid
             self.sectionID = appDelegate.sectionID
             appDelegate.opposerid = self.opposerid
             appDelegate.productid = self.productid
@@ -149,11 +198,6 @@ class ProductDetailViewController: UIViewController {
     }
     
     @IBAction func backViewContorollerButton(_ sender: Any) {
-//        let storyboard: UIStoryboard = UIStoryboard(name: "A", bundle: nil)
-//        let nextView = storyboard.instantiateInitialViewController()
-//        present(nextView!, animated: true, completion: nil)
         dismiss(animated: true, completion: nil)
     }
-    
-    
 }

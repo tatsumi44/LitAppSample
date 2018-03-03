@@ -28,7 +28,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
     var photoCount: Int!
     let sectionID: Int = 1
     
-
+    
     
     
     
@@ -36,10 +36,8 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
         super.viewDidLoad()
         mainCollectionView.dataSource = self
         mainCollectionView.delegate = self
-                print("これは\(Auth.auth().currentUser?.uid)です")
         
         
-        // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -61,10 +59,10 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
                     let image1 = document.data()["imagePath"]! as? [String]
                     print(image1![0])
                     print(String(describing: type(of: image1![0])))
-
-                    self.productArray.append(Product(productName: "\(document.data()["productName"] as! String)", productID: "\(document.documentID)", price: "\(document.data()["price"] as! String)", imageArray: image1!, detail: "\(document.data()["detail"] as! String)", uid: "\(document.data()["uid"] as! String)"))
                     
-                        self.imagePathArray.append(image1![0])
+                    self.productArray.append(Product(productName: "\(document.data()["productName"] as! String)", productID: "\(document.documentID)", price: "\(document.data()["price"] as! String)", imageArray: image1!, detail: "\(document.data()["detail"] as! String)", uid: "\(document.data()["uid"] as! String)",place: "\(document.data()["place"] as! String)"))
+                    
+                    self.imagePathArray.append(image1![0])
                     
                 }
                 print(self.productArray)
@@ -72,7 +70,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
                     let ref = storage.child("image/goods/\(path)")
                     self.getmainArray.append(ref)
                 }
-               let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.productArray = self.productArray
                 print("いいね")
                 print(self.getmainArray)
@@ -80,7 +78,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
             }
         }
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -97,14 +95,24 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         //セルの中にあるimageViewを指定tag = 1
-        cell.layer.cornerRadius = 10.0
-        cell.layer.masksToBounds = true
+        //        cell.layer.masksToBounds = true //必須
+        //        cell.layer.cornerRadius = 10.0
+        //        cell.layer.shadowOffset = CGSize(width: 0.0, height: 2.0);
+        //        cell.layer.shadowOpacity = 0.9;
+        //        cell.layer.shadowRadius = 2.0;
+        //        cell.layer.borderColor = UIColor.black.cgColor
+        //        cell.layer.borderWidth = 0.5
         let imageView = cell.contentView.viewWithTag(1) as! UIImageView
         imageView.frame.size.width = mainCollectionView.frame.size.width/2-5.0
+        imageView.layer.cornerRadius = 10.0
+        imageView.layer.masksToBounds = true
         let nameLabel = cell.contentView.viewWithTag(2) as! UILabel
         let priceLabel = cell.contentView.viewWithTag(3) as! UILabel
+        let placeLabel = cell.contentView.viewWithTag(4) as! UILabel
         nameLabel.text = productArray[indexPath.row].productName
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
         priceLabel.text = productArray[indexPath.row].price
+        placeLabel.text = productArray[indexPath.row].place
         //getmainArrayにあるpathをurl型に変換しimageViewに描画
         getmainArray[indexPath.row].downloadURL { url, error in
             if let error = error {
@@ -113,7 +121,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
                 print(url!)
                 //imageViewに描画、SDWebImageライブラリを使用して描画
                 imageView.sd_setImage(with: url!, completed: nil)
-
+                
             }
         }
         return cell
@@ -136,7 +144,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
         appDelegate.cellOfNum = self.cellOfNum
         appDelegate.sectionID = self.sectionID
     }
-
+    
     
     
 }

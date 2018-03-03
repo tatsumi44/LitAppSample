@@ -38,13 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 2ページ目になるViewController
         let secondSB = UIStoryboard(name: "C", bundle: nil)
         let secondVC = secondSB.instantiateInitialViewController()! as UIViewController
-        secondVC.tabBarItem = UITabBarItem(title: "チャット", image: UIImage(named:"option.png"), tag: 1)
+        secondVC.tabBarItem = UITabBarItem(title: "チャット", image: UIImage(named:"chat.png"), tag: 1)
         viewControllers.append(secondVC)
         
         // 3ページ目になるViewController
         let thirdSB = UIStoryboard(name: "B", bundle: nil)
         let thirdVC = thirdSB.instantiateInitialViewController()! as UIViewController
-        thirdVC.tabBarItem = UITabBarItem(title: "その他", image: UIImage(named:"chat.png"), tag: 1)
+        thirdVC.tabBarItem = UITabBarItem(title: "その他", image: UIImage(named:"option.png"), tag: 1)
         viewControllers.append(thirdVC)
         
         // ViewControllerをセット

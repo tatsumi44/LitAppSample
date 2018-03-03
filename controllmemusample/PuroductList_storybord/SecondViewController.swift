@@ -11,9 +11,9 @@ import Firebase
 import FirebaseStorage
 import SDWebImage
 
-class SecondViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
- 
-  
+class SecondViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+    
+    
     @IBOutlet weak var mainCollectionView: UICollectionView!
     var db1: Firestore!
     var db: DatabaseReference!
@@ -53,12 +53,12 @@ class SecondViewController: UIViewController,UICollectionViewDataSource,UICollec
                     let image1 = document.data()["imagePath"]! as? [String]
                     print(image1![0])
                     print(String(describing: type(of: image1![0])))
-                    self.productArray.append(Product(productName: "\(document.data()["productName"] as! String)", productID: "\(document.documentID)", price: "\(document.data()["price"] as! String)", imageArray: image1!, detail: "\(document.data()["detail"] as! String)", uid: "\(document.data()["uid"] as! String)"))
+                    self.productArray.append(Product(productName: "\(document.data()["productName"] as! String)", productID: "\(document.documentID)", price: "\(document.data()["price"] as! String)", imageArray: image1!, detail: "\(document.data()["detail"] as! String)", uid: "\(document.data()["uid"] as! String)",place: "\(document.data()["place"] as! String)"))
                     
                     self.imagePathArray.append(image1![0])
                     
                 }
-
+                
                 print(self.productArray)
                 for path in self.imagePathArray{
                     let ref = storage.child("image/goods/\(path)")
@@ -87,10 +87,16 @@ class SecondViewController: UIViewController,UICollectionViewDataSource,UICollec
         cell.layer.masksToBounds = true
         //セルの中にあるimageViewを指定tag = 1
         let imageView = cell.contentView.viewWithTag(1) as! UIImageView
+        imageView.frame.size.width = mainCollectionView.frame.size.width/2-5.0
+        imageView.layer.cornerRadius = 10.0
+        imageView.layer.masksToBounds = true
         let nameLabel = cell.contentView.viewWithTag(2) as! UILabel
         let priceLabel = cell.contentView.viewWithTag(3) as! UILabel
+        let placeLabel = cell.contentView.viewWithTag(4) as! UILabel
         nameLabel.text = productArray[indexPath.row].productName
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
         priceLabel.text = productArray[indexPath.row].price
+        placeLabel.text = productArray[indexPath.row].place
         //getmainArrayにあるpathをurl型に変換しimageViewに描画
         getmainArray[indexPath.row].downloadURL { url, error in
             if let error = error {
@@ -103,6 +109,16 @@ class SecondViewController: UIViewController,UICollectionViewDataSource,UICollec
             }
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cellSize1:CGFloat = mainCollectionView.frame.size.width/2-5.0
+        let cellSize2: CGFloat = mainCollectionView.frame.size.height/2
+        // 正方形で返すためにwidth,heightを同じにする
+        return CGSize(width: cellSize1, height: cellSize2)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
