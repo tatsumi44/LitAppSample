@@ -83,6 +83,8 @@ class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        cell.layer.cornerRadius = 10.0
+        cell.layer.masksToBounds = true
         //セルの中にあるimageViewを指定tag = 1
         let imageView = cell.contentView.viewWithTag(1) as! UIImageView
         let nameLabel = cell.contentView.viewWithTag(2) as! UILabel

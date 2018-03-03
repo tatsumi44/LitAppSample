@@ -12,10 +12,12 @@ import FirebaseStorage
 import SDWebImage
 import NVActivityIndicatorView
 
-class FirstViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+class FirstViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
+    
+    
     var db1: Firestore!
     var db: DatabaseReference!
     var getmainArray = [StorageReference]()
@@ -27,21 +29,21 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
     let sectionID: Int = 1
     
 
-    @IBOutlet weak var indicator: NVActivityIndicatorView!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mainCollectionView.dataSource = self
         mainCollectionView.delegate = self
-        print("これは\(Auth.auth().currentUser?.uid)です")
+                print("これは\(Auth.auth().currentUser?.uid)です")
         
         
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        indicator.startAnimating()
+        
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         self.photoCount = appDelegate.photoCount
         print("これは\(self.photoCount)")
@@ -81,7 +83,7 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        indicator.stopAnimating()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -95,7 +97,10 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         //セルの中にあるimageViewを指定tag = 1
+        cell.layer.cornerRadius = 10.0
+        cell.layer.masksToBounds = true
         let imageView = cell.contentView.viewWithTag(1) as! UIImageView
+        imageView.frame.size.width = mainCollectionView.frame.size.width/2-5.0
         let nameLabel = cell.contentView.viewWithTag(2) as! UILabel
         let priceLabel = cell.contentView.viewWithTag(3) as! UILabel
         nameLabel.text = productArray[indexPath.row].productName
@@ -112,6 +117,16 @@ class FirstViewController: UIViewController,UICollectionViewDataSource,UICollect
             }
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cellSize1:CGFloat = mainCollectionView.frame.size.width/2-5.0
+        let cellSize2: CGFloat = mainCollectionView.frame.size.height/2
+        // 正方形で返すためにwidth,heightを同じにする
+        return CGSize(width: cellSize1, height: cellSize2)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

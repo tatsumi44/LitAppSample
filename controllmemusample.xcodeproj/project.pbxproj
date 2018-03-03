@@ -25,6 +25,9 @@
 		B935019E2045316D000F554B /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935019D2045316D000F554B /* ChatListViewController.swift */; };
 		B93501A0204536A8000F554B /* SelectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935019F204536A8000F554B /* SelectListViewController.swift */; };
 		B93501A42045482D000F554B /* ChatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93501A32045482D000F554B /* ChatDetailViewController.swift */; };
+		B97F9CE1204A8A3300EADB20 /* option.png in Resources */ = {isa = PBXBuildFile; fileRef = B97F9CE0204A8A3300EADB20 /* option.png */; };
+		B97F9CE3204A8A5200EADB20 /* trade.png in Resources */ = {isa = PBXBuildFile; fileRef = B97F9CE2204A8A5200EADB20 /* trade.png */; };
+		B97F9CE5204A8A6F00EADB20 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = B97F9CE4204A8A6F00EADB20 /* chat.png */; };
 		B99025C3204560E000EC7108 /* PurchasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99025C2204560E000EC7108 /* PurchasedViewController.swift */; };
 		B99025C520456A4700EC7108 /* PurchasedDetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99025C420456A4700EC7108 /* PurchasedDetailChatViewController.swift */; };
 		B9D7D8DE203F2FA00028EF07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D7D8DD203F2FA00028EF07 /* AppDelegate.swift */; };
@@ -67,6 +70,9 @@
 		B935019D2045316D000F554B /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		B935019F204536A8000F554B /* SelectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectListViewController.swift; sourceTree = "<group>"; };
 		B93501A32045482D000F554B /* ChatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailViewController.swift; sourceTree = "<group>"; };
+		B97F9CE0204A8A3300EADB20 /* option.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = option.png; sourceTree = "<group>"; };
+		B97F9CE2204A8A5200EADB20 /* trade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trade.png; sourceTree = "<group>"; };
+		B97F9CE4204A8A6F00EADB20 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
 		B99025C2204560E000EC7108 /* PurchasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedViewController.swift; sourceTree = "<group>"; };
 		B99025C420456A4700EC7108 /* PurchasedDetailChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedDetailChatViewController.swift; sourceTree = "<group>"; };
 		B9D7D8DA203F2FA00028EF07 /* controllmemusample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = controllmemusample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +209,9 @@
 			children = (
 				B9D7D903203FEB840028EF07 /* GoogleService-Info.plist */,
 				B9D7D909204026590028EF07 /* Kanematsu_auditorium.jpg */,
+				B97F9CE2204A8A5200EADB20 /* trade.png */,
+				B97F9CE4204A8A6F00EADB20 /* chat.png */,
+				B97F9CE0204A8A3300EADB20 /* option.png */,
 				B9D7D8DD203F2FA00028EF07 /* AppDelegate.swift */,
 				B9D7D8DF203F2FA00028EF07 /* ViewController.swift */,
 				B935015620403554000F554B /* Auth */,
@@ -310,12 +319,15 @@
 				B93501962043E5FC000F554B /* next22.png in Resources */,
 				B9D7D90A204026590028EF07 /* Kanematsu_auditorium.jpg in Resources */,
 				B917CF402049230C0074B846 /* Post.png in Resources */,
+				B97F9CE5204A8A6F00EADB20 /* chat.png in Resources */,
 				B9D7D8F4203F300E0028EF07 /* C.storyboard in Resources */,
 				B9D7D8F2203F2FFD0028EF07 /* B.storyboard in Resources */,
 				B93501902043D743000F554B /* productDetail.storyboard in Resources */,
 				B9D7D904203FEB850028EF07 /* GoogleService-Info.plist in Resources */,
+				B97F9CE3204A8A5200EADB20 /* trade.png in Resources */,
 				B9D7D8E5203F2FA00028EF07 /* Assets.xcassets in Resources */,
 				B93501952043E5FC000F554B /* back22.png in Resources */,
+				B97F9CE1204A8A3300EADB20 /* option.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
