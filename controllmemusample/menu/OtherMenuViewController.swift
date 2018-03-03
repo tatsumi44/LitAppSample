@@ -53,6 +53,10 @@ class OtherMenuViewController: UIViewController {
             //指定したStorybordの一番最初に画面遷移
             let nextView = storybord.instantiateInitialViewController()
             present(nextView!, animated: true, completion: nil)
+//            UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: false, completion: nil) // コメントアウトするとメモリリークする
+//            UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "FirstSelectViewController")
+            print("通っている")
+            
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }

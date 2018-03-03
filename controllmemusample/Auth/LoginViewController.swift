@@ -43,9 +43,11 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
                 // 移動先ViewControllerのインスタンスを取得（ストーリーボードIDから）
                 let storyboard = UIStoryboard(name: "A", bundle: nil)
                 let dstView = storyboard.instantiateViewController(withIdentifier: "FirstViewController")
+                self.tabBarController?.present(dstView, animated: true, completion: nil)
+                //ウルトラ重要、おそらくrootViewControllerが重なっているので解放が必要。
+                 UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: false, completion: nil)
                 
-                self.tabBarController?.navigationController?.present(dstView, animated: true, completion: nil)
-
+               
             }
         }
     }

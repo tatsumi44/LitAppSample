@@ -49,17 +49,16 @@ class SecondViewController: UIViewController,UICollectionViewDataSource,UICollec
                 print("Error getting documents: \(error)")
             }else{
                 for document in snap!.documents {
+                    
                     let image1 = document.data()["imagePath"]! as? [String]
                     print(image1![0])
                     print(String(describing: type(of: image1![0])))
-                    
                     self.productArray.append(Product(productName: "\(document.data()["productName"] as! String)", productID: "\(document.documentID)", price: "\(document.data()["price"] as! String)", imageArray: image1!, detail: "\(document.data()["detail"] as! String)", uid: "\(document.data()["uid"] as! String)"))
-                    
                     
                     self.imagePathArray.append(image1![0])
                     
-                    
                 }
+
                 print(self.productArray)
                 for path in self.imagePathArray{
                     let ref = storage.child("image/goods/\(path)")

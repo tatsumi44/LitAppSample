@@ -136,7 +136,7 @@ class ProductContoributionViewController: UIViewController,UICollectionViewDataS
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.photoCount = self.photoCount
         
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

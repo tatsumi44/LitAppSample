@@ -21,14 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var photoCount: Int!
     var sectionID: Int!
     
-    
-    
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         let db = Firestore.firestore()
-        UINavigationBar.appearance().barTintColor = UIColor.orange.withAlphaComponent(0.1)
+        UINavigationBar.appearance().barTintColor = UIColor.white
         var viewControllers: [UIViewController] = []
         
         
@@ -65,6 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillResignActive(_ application: UIApplication) {
 
+      
         
         
     }
